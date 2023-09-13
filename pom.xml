@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.today</groupId>
-    <artifactId>JavaApp</artifactId>
+    <artifactId>Java</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>JavaApp</name>
-    <description>JavaApp Web 服务</description>
+    <name>Java</name>
+    <description>Java Web 服务</description>
     <properties>
         <java.version>20</java.version>
     </properties>
