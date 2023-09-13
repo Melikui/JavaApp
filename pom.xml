@@ -11,8 +11,8 @@
     <groupId>com.today</groupId>
     <artifactId>JavaApp</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>demo5</name>
-    <description>demo5</description>
+    <name>JavaApp</name>
+    <description>JavaApp Web 服务</description>
     <properties>
         <java.version>20</java.version>
     </properties>
