@@ -1,0 +1,26 @@
+# 配置服务
+server:
+  port: 8088
+
+# spring 配置
+spring:
+  # 配置热部署
+  devtools:
+    restart:
+      # 热部署生效
+      enabled: true
+      # 设置重启的目录
+      additional-paths: src/main/java
+      # classpath目录下的WEB-INF文件夹内容修改不重启
+      exclude: WEB-INF/**
+  # 配置数据库
+  datasource:
+    # 指定数据库驱动
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # 数据库jdbc连接url地址
+    url: jdbc:mysql://127.0.0.1:3306/myapp_dev
+    # 数据库账号
+    username: root
+    password: melikui
+
+
