@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.today.App.mapper.TodoMapper">
+
+    <select id="getList" resultType="com.today.App.model.Todo">
+        select *
+        from todo
+    </select>
+    <insert id="add" parameterType="com.today.App.model.Todo">
+        insert into todo(value, brief)
+        values (#{value}, #{brief})
+    </insert>
+
+    <update id="update">
+        update todo
+        set value = #{value},
+            brief = #{brief}
+        where id = #{id}
+    </update>
+
+    <delete id="delete">
+        delete
+        from todo
+        where id = #{id}
+    </delete>
+
+</mapper>
+

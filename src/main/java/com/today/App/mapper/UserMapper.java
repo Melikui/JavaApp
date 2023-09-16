@@ -10,5 +10,6 @@ public interface UserMapper {
      * @return
      */
     List<User> getAll();
+
 }
 
