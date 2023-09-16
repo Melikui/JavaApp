@@ -6,4 +6,8 @@ import java.util.List;
 
 public interface StudentMapper {
     List<Student> selectAll();
+    Student selectOne(Long id);
+    void insert(Student student);
+    void update(Student student);
+    void delete(Long id);
 }
