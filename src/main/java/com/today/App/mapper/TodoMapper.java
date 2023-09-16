@@ -8,8 +8,6 @@ import java.util.List;
 public interface TodoMapper {
     /**
      * 获取所有用户信息
-     *
-     * @return
      */
     List<Todo> getList();
 

@@ -20,10 +20,10 @@ class ApplicationTests {
         for (Todo item : todos) {
             System.out.println("value:" + item.getValue() + ",brief:" + item.getBrief());
         }
-//        Todo todo = new Todo();
-//        todo.setValue("Python");
-//        todo.setBrief("简洁优雅的语言");
-//        todoMapper.add(todo);
+        Todo todo = new Todo();
+        todo.setValue("Python");
+        todo.setBrief("简洁优雅的语言");
+        todoMapper.add(todo);
     }
 }
 
