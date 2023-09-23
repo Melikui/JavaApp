@@ -53,5 +53,6 @@ public class MySQL {
         MySQL mysql = new MySQL("jdbc:mysql://localhost:3306/likui", "root", "melikui");
         mysql.dbQuery();
     }
+
 }
 

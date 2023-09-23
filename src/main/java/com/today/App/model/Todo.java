@@ -5,7 +5,6 @@ public class Todo {
     private String value;
     private int selected;
     private String brief;
-
     private String create_time;
 
     public Todo() {

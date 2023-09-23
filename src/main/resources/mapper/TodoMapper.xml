@@ -6,6 +6,7 @@
         select *
         from todo
     </select>
+
     <insert id="add" parameterType="com.today.App.model.Todo">
         insert into todo(value, brief)
         values (#{value}, #{brief})
