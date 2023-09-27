@@ -1,6 +1,5 @@
 package com.today.base.algorithm;
 
-
 import java.util.Arrays;
 
 public class Search {
@@ -55,7 +54,7 @@ public class Search {
         int last = list.length - 1;
         boolean found = false;
         //2.利用循环不断的去找要查找的数据
-        while (first <= last & !found) {
+        while (first <= last && !found) {
             //3.找到min和max的中间位置
             int mid = (first + last) / 2;
             //4.拿着mid指向的元素跟要查找的元素进行比较
@@ -72,3 +71,4 @@ public class Search {
         return found;
     }
 }
+
