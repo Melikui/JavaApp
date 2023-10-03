@@ -2,20 +2,24 @@ package com.today.App.model;
 
 public class Todo {
     private int id;
-    private String value;
+    private String title;
     private int selected;
-    private String brief;
+    private String content;
     private String create_time;
+    private String update_time;
 
     public Todo() {
     }
 
-    public Todo(int id, String value, int selected, String brief) {
+    public Todo(int id, String title, int selected, String content, String create_time, String update_time) {
         this.id = id;
-        this.value = value;
+        this.title = title;
         this.selected = selected;
-        this.brief = brief;
+        this.content = content;
+        this.create_time = create_time;
+        this.update_time = update_time;
     }
+
 
     public int getId() {
         return id;
@@ -25,12 +29,12 @@ public class Todo {
         this.id = id;
     }
 
-    public String getValue() {
-        return value;
+    public String getTitle() {
+        return title;
     }
 
-    public void setValue(String value) {
-        this.value = value;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public int getSelected() {
@@ -41,12 +45,12 @@ public class Todo {
         this.selected = selected;
     }
 
-    public String getBrief() {
-        return brief;
+    public String getContent() {
+        return content;
     }
 
-    public void setBrief(String brief) {
-        this.brief = brief;
+    public void setContent(String content) {
+        this.content = content;
     }
 
     public String getCreateTime() {
@@ -55,5 +59,13 @@ public class Todo {
 
     public void setCreateTime(String create_time) {
         this.create_time = create_time;
+    }
+
+    public String getUpdateTime() {
+        return update_time;
+    }
+
+    public void setUpdateTime(String update_time) {
+        this.update_time = update_time;
     }
 }
