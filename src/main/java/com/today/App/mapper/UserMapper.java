@@ -8,7 +8,7 @@ public interface UserMapper {
     /**
      * 获取所有用户信息
      *
-     * @return
+     * @return List
      */
     // 查询用户列表
     List<User> list();

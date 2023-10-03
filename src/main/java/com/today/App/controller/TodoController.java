@@ -23,9 +23,7 @@ public class TodoController {
      */
     @GetMapping(value = "/todo/list")
     public List<Todo> todoList(@RequestHeader Map<String, String> headers) {
-        headers.forEach((key, value) -> {
-            System.out.println(key + " : " + value);
-        });
+        headers.forEach((key, value) -> System.out.println(key + " : " + value));
         return todoMapper.todoList();
     }
 
