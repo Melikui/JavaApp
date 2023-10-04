@@ -3,7 +3,7 @@ package com.today.base.utils;
 import java.io.*;
 
 public class FileUtil {
-    public static void fileInfo(String path) throws IOException {
+    public static void fileInfo(String path) {
         File file = new File(path);
         System.out.println(file.exists());
         System.out.println(file.getParent());

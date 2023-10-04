@@ -116,4 +116,21 @@ public class User {
     public void setIsDelete(int isDelete) {
         this.isDelete = isDelete;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", sex='" + sex + '\'' +
+                ", position='" + position + '\'' +
+                ", salary=" + salary +
+                ", subsidy=" + subsidy +
+                ", mobile='" + mobile + '\'' +
+                ", email='" + email + '\'' +
+                ", address='" + address + '\'' +
+                ", isDelete=" + isDelete +
+                '}';
+    }
 }

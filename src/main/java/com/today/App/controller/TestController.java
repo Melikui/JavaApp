@@ -12,7 +12,6 @@ import java.util.Map;
 public class TestController {
     @GetMapping("/test")
     public Map<String, String> test(@RequestHeader Map<String, String> headers) {
-        // System.out.println("headers------:" + headers.values());
         headers.forEach((key, value) -> System.out.println(key + " : " + value));
         return headers;
     }

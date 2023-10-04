@@ -68,4 +68,16 @@ public class Todo {
     public void setUpdateTime(String update_time) {
         this.update_time = update_time;
     }
+
+    @Override
+    public String toString() {
+        return "Todo{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", selected=" + selected +
+                ", content='" + content + '\'' +
+                ", create_time='" + create_time + '\'' +
+                ", update_time='" + update_time + '\'' +
+                '}';
+    }
 }
