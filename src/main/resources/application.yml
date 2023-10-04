@@ -13,6 +13,7 @@ spring:
       additional-paths: src/main/java
       # classpath目录下的WEB-INF文件夹内容修改不重启
       exclude: WEB-INF/**
+
   # 配置数据库
   datasource:
     # 指定数据库驱动
@@ -22,6 +23,13 @@ spring:
     # 数据库账号
     username: root
     password: melikui
+
+#  thymeleaf:
+#    cache: false # 是否开启缓存，开发时可以设置为false，默认为true
+#    prefix: classpath:/templates/ # 模板文件位置
+#    servlet:
+#      content-type: text/html # Content-Type配置
+#    suffix: .html # 模板文件后缀
 
 # mybatis 配置
 mybatis:
