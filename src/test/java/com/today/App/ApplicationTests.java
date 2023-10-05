@@ -18,7 +18,7 @@ class ApplicationTests {
         // 查询全部
         List<User> users = userMapper.list();
         for (User item : users) {
-            System.out.println("id:" + item.getId() + ",name:" + item.getName());
+            System.out.println(item.toString());
         }
     }
 }
