@@ -1,7 +1,7 @@
 package com.today.App.controller;
 
 import com.today.App.mapper.UserMapper;
-import com.today.App.model.User;
+import com.today.App.entity.User;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

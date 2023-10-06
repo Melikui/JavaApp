@@ -1,7 +1,7 @@
 package com.today.App;
 
 import com.today.App.mapper.UserMapper;
-import com.today.App.model.User;
+import com.today.App.entity.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,6 +1,6 @@
 package com.today.App.mapper;
 
-import com.today.App.model.Todo;
+import com.today.App.entity.Todo;
 
 import java.util.List;
 

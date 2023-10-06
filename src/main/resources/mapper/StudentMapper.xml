@@ -12,14 +12,14 @@
         FROM student
         WHERE id = #{id}
     </select>
-    <insert id="insert" parameterType="com.today.App.model.Student" >
+    <insert id="insert" parameterType="com.today.App.entity.Student" >
         INSERT INTO
             student
             (name,sex,age)
         VALUES
             (#{name}, #{sex}, #{age})
     </insert>
-    <resultMap id="BaseResultMap" type="com.today.App.model.Student">
+    <resultMap id="BaseResultMap" type="com.today.App.entity.Student">
         <id column="id" property="id" jdbcType="BIGINT"/>
         <result column="name" property="name" jdbcType="VARCHAR"/>
         <result column="sex" property="sex" javaType="INTEGER"/>

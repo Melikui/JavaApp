@@ -1,4 +1,4 @@
-package com.today.App.model;
+package com.today.App.entity;
 
 public class Student {
     private Long id;

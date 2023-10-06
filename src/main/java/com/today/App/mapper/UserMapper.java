@@ -1,6 +1,6 @@
 package com.today.App.mapper;
 
-import com.today.App.model.User;
+import com.today.App.entity.User;
 
 import java.util.List;
 

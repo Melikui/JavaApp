@@ -1,5 +1,6 @@
-package com.today.App.model;
+package com.today.App.entity;
 
+//@Data
 public class User {
     private int id;
     private String name;

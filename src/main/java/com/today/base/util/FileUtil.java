@@ -1,4 +1,4 @@
-package com.today.base.utils;
+package com.today.base.util;
 
 import java.io.*;
 

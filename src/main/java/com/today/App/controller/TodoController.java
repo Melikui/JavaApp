@@ -1,7 +1,7 @@
 package com.today.App.controller;
 
 import com.today.App.mapper.TodoMapper;
-import com.today.App.model.Todo;
+import com.today.App.entity.Todo;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
