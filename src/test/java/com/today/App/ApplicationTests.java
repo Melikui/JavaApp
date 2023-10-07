@@ -17,7 +17,9 @@ class ApplicationTests {
 
     @Test
     public void dataString() {
+        // 1、存数据
         redisTemplate.opsForValue().set("username", "melikui");
+        // 2、取数据
         Object result = redisTemplate.opsForValue().get("username");
         System.out.println(result);
     }
