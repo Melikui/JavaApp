@@ -24,7 +24,7 @@ spring:
     username: root
     password: melikui
 
-  # Redis配置
+  # Redis 配置
   data:
     redis:
       host: 127.0.0.1
