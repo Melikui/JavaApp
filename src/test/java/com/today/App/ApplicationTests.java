@@ -12,9 +12,8 @@ class ApplicationTests {
     private RedisTemplate<String, Object> redisTemplate;
 
     @Test
-    public void dataString () throws Exception {
-        redisTemplate.opsForValue().set("username", "jaychou");
-        //通过 key 值读取 value
+    public void dataString() {
+        redisTemplate.opsForValue().set("username", "melikui");
         Object result = redisTemplate.opsForValue().get("username");
         System.out.println(result);
     }
