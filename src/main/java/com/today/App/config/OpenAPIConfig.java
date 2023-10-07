@@ -12,8 +12,8 @@ public class OpenAPIConfig {
     public OpenAPI openAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("Melikui 接口文档")
-                        .description("myToday 开发接口文档")
+                        .title("myToday 接口文档")
+                        .description("@Author Melikui")
                         .version("v1"))
                 .externalDocs(new ExternalDocumentation()
                         .description("主页")
