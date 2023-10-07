@@ -34,8 +34,10 @@ public class UserController {
     }
 
     @Operation(summary = "测试Swagger3注解方法Get")
-    @Parameters({@Parameter(name = "id", description = "编码"),
-            @Parameter(name = "headerValue", description = "header传送内容")})
+    @Parameters({
+            @Parameter(name = "id", description = "编码"),
+            @Parameter(name = "headerValue", description = "header传送内容")
+    })
     @ApiResponses({
             @ApiResponse(responseCode = "200", description = "请求成功"),
             @ApiResponse(responseCode = "400", description = "请求参数没填好"),

@@ -1,12 +1,12 @@
 package com.today.base;
 
-import com.today.base.plugins.Redis;
+import java.util.Random;
 
 public class Main {
-    public static void main(String[] args) throws Exception {
-        Redis redis = new Redis();
-        redis.set("say","hello world");
-        System.out.println(redis.get("say"));
+    public static void main(String[] args) {
+        Random rand = new Random();
+        int rand_int1 = rand.nextInt(1000);
+        System.out.println("Random Integers: " + rand_int1);
     }
 }
 
