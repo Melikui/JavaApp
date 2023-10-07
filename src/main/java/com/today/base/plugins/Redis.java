@@ -11,14 +11,14 @@ public class Redis {
         return new Jedis(ip, port);
     }
 
-    // 为string添加元素
+    // 为 String添加元素
     public void set(String key, String value) throws Exception {
         Jedis jedis = connection();
         jedis.set(key, value);
         jedis.close();
     }
 
-    // 获取string
+    // 获取 String
     public String get(String key) throws Exception {
         Jedis jedis = connection();
         String value = jedis.get(key);
