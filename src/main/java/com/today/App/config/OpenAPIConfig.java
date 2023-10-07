@@ -12,11 +12,11 @@ public class OpenAPIConfig {
     public OpenAPI openAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("测试 title")
-                        .description("SpringBoot3 集成 Swagger3")
+                        .title("Melikui 接口文档")
+                        .description("myToday 开发接口文档")
                         .version("v1"))
                 .externalDocs(new ExternalDocumentation()
-                        .description("项目API文档")
+                        .description("主页")
                         .url("/"));
     }
 }
