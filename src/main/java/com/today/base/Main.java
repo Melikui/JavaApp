@@ -1,12 +1,12 @@
 package com.today.base;
 
+import com.today.base.plugins.Redis;
+
 public class Main {
-    public static void main(String[] args) {
-        String phoneNumber = "13135519763";
-        String start = phoneNumber.substring(0, 3);
-        String end = phoneNumber.substring(7);
-        String result = start + "*".repeat(4) + end;
-        System.out.println(result);
+    public static void main(String[] args) throws Exception {
+        Redis redis = new Redis();
+        redis.set("say","hello world");
+        System.out.println(redis.get("say"));
     }
 }
 
