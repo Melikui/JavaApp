@@ -24,12 +24,27 @@ spring:
     username: root
     password: melikui
 
-#  thymeleaf:
-#    cache: false # 是否开启缓存，开发时可以设置为false，默认为true
-#    prefix: classpath:/templates/ # 模板文件位置
-#    servlet:
-#      content-type: text/html # Content-Type配置
-#    suffix: .html # 模板文件后缀
+  # Redis配置
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+      database: 1
+      # 读超时
+      timeout: 3000
+      # 连接超时
+      connectTimeout: 5000
+      # Lettuce连接池
+      lettuce:
+        pool:
+          # 最小空闲连接
+          min-idle: 5
+          # 最大空闲连接
+          max-idle: 10
+          # 最大连接数
+          max-active: 100
+          # 连接分配应该阻塞的最大时间
+          max-wait: 2000
 
 # mybatis 配置
 mybatis:
