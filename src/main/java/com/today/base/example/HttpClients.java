@@ -8,7 +8,7 @@ import org.apache.http.util.EntityUtils;
 import java.io.IOException;
 
 public class HttpClients {
-    public static void getHtml(String[] args) throws InterruptedException, IOException {
+    public static void getHtml() throws IOException {
         // 创建HttpClient对象
         CloseableHttpClient httpClient = org.apache.http.impl.client.HttpClients.createDefault();
         // 创建GET请求
