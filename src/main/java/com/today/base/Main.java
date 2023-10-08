@@ -1,5 +1,6 @@
 package com.today.base;
 
+import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
@@ -9,7 +10,7 @@ import org.apache.http.util.EntityUtils;
 import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) throws InterruptedException, IOException {
+    public static void main(String[] args) throws IOException {
         // 创建HttpClient对象
         CloseableHttpClient httpClient = HttpClients.createDefault();
         // 创建GET请求
@@ -17,8 +18,9 @@ public class Main {
         // 获取响应结果
         CloseableHttpResponse response = httpClient.execute(httpGet);
         if (response.getStatusLine().getStatusCode() == 200) {
-            String html = EntityUtils.toString(response.getEntity(), "UTF-8");
-            System.out.println(html);
+            HttpEntity entity = response.getEntity();
+            String responseJson = EntityUtils.toString(entity, "UTF-8");
+            System.out.println(responseJson);
         }
         httpClient.close();
         response.close();
