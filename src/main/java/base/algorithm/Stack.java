@@ -1,4 +1,4 @@
-package com.today.base.algorithm;
+package base.algorithm;
 
 public class Stack {
     public boolean isEmpty(){

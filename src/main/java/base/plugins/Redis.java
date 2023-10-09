@@ -1,4 +1,4 @@
-package com.today.base.plugins;
+package base.plugins;
 
 import redis.clients.jedis.Jedis;
 

@@ -1,4 +1,4 @@
-package com.today.base.example;
+package base.example;
 
 public class Girl extends Person {
     String name = "girl-name";

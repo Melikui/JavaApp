@@ -1,4 +1,4 @@
-package com.today.base.example;
+package base.example;
 
 public class Person {
     public String name = "person-name";

@@ -1,4 +1,4 @@
-package com.today.base.example;
+package base.example;
 
 public class Recursion {
     public int recursion(int num) {

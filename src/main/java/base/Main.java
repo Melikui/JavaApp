@@ -1,6 +1,6 @@
-package com.today.base;
+package base;
 
-import com.today.base.algorithm.Search;
+import base.algorithm.Search;
 
 public class Main {
     public static void main(String[] args) {

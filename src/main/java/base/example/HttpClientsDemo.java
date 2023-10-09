@@ -1,4 +1,4 @@
-package com.today.base.example;
+package base.example;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
