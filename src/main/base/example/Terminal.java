@@ -6,7 +6,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 
 public class Terminal {
-    public static void run() throws IOException, InterruptedException {
+    public static void main(String[] args) throws IOException, InterruptedException {
         String[] command = {"ls", "-a"};
         Process process = Runtime.getRuntime().exec(command);
         // 读取命令执行结果
