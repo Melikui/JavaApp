@@ -4,17 +4,22 @@ import java.sql.*;
 
 public class MySQL {
     static String driver = "com.mysql.cj.jdbc.Driver"; // MySQL 驱动
-    String url; // 数据库链接地址
-    String username; // 用户名
-    String password; // 用户密码
+    String url = "jdbc:mysql://localhost:3306/likui"; // 数据库链接地址
+    String username = "root"; // 用户名
+    String password = "melikui"; // 用户密码
     Connection connection; // 连接对象
     Statement statement; // 执行语句
 
-    // MySQL 类的构造器
+    public MySQL() {
+    }
+
     public MySQL(String url, String username, String password) {
         this.url = url;
         this.username = username;
         this.password = password;
+    }
+
+    static {
         try {
             Class.forName(driver);
         } catch (ClassNotFoundException e) {

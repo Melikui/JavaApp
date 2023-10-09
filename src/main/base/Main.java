@@ -1,14 +1,10 @@
-import util.FileUtil;
+import plugins.MySQL;
 
-import java.io.File;
+import java.sql.SQLException;
 
 public class Main {
-    public static void main(String[] args) {
-        String path = "/Users/likui/Desktop/Java/file/text/bilibili.txt";
-//        String content = FileUtil.fileRead(path);
-//        System.out.println(content);
-        File file = new File(path);
-        System.out.println(file.exists());
-        System.out.println(file.getParent());
+    public static void main(String[] args) throws SQLException {
+        MySQL mysql = new MySQL();
+        mysql.dbQuery();
     }
 }
