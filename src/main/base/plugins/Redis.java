@@ -1,4 +1,4 @@
-package base.plugins;
+package plugins;
 
 import redis.clients.jedis.Jedis;
 

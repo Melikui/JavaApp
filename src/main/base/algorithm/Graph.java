@@ -1,4 +1,4 @@
-package base.algorithm;
+package algorithm;
 
 public class Graph {
 }

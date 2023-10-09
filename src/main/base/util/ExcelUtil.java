@@ -1,4 +1,4 @@
-package base.util;
+package util;
 
 public class ExcelUtil {
 }
