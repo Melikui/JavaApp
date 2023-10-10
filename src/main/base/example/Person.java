@@ -8,3 +8,21 @@ public class Person {
     }
 }
 
+class Boy extends Person {
+    String name = "boy-name";
+
+    void boy() {
+        System.out.println("boy");
+    }
+}
+
+class Girl extends Person {
+    String name = "girl-name";
+
+    void girl() {
+        System.out.println("girl");
+    }
+}
+
+
+
