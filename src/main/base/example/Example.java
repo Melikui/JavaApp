@@ -2,7 +2,7 @@ package example;
 
 import java.util.Scanner;
 
-public class Example {
+public class Example implements Interface {
     /**
      * 打印星星✨
      */
