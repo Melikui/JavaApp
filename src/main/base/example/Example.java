@@ -2,7 +2,14 @@ package example;
 
 import java.util.Scanner;
 
-public class Example implements Interface {
+public class Example {
+    public Example() {
+    }
+
+    public void test() {
+        System.out.println("test");
+    }
+
     /**
      * 打印星星✨
      */
@@ -43,7 +50,7 @@ public class Example implements Interface {
     /**
      * 求符合勾股定理100以内的数
      */
-    public static void gougudingli(){
+    public static void gougudingli() {
         for (int x = 1; x <= 100; x++) {
             for (int y = 1; y <= 100; y++) {
                 for (int z = 1; z <= 100; z++) {
@@ -58,7 +65,7 @@ public class Example implements Interface {
     /**
      * 递归求阶乘
      */
-    public static int recursion(int num){
+    public static int recursion(int num) {
         System.out.println(num);
         return num == 1 ? num : num * recursion(num - 1);
     }
