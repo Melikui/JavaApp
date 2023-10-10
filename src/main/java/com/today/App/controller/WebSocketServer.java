@@ -13,8 +13,7 @@ import java.util.concurrent.ConcurrentHashMap;
 @Slf4j
 @ServerEndpoint("/websocket/{sid}")
 public class WebSocketServer {
-    // 接口路径 ws://localhost:8080/webSocket/sid;
-
+    // 接口路径 ws://localhost:8080/websocket/sid;
     // 连接会话
     private Session session;
 
