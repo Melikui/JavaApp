@@ -14,7 +14,7 @@ public class Main {
         httpGet.setHeader("user-agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36");
         // 获取响应结果
         CloseableHttpResponse response = httpClient.execute(httpGet);
-
+        System.out.println(response);
         httpClient.close();
         response.close();
     }
