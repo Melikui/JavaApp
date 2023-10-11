@@ -4,6 +4,7 @@ import java.io.*;
 
 public class FileUtil {
     public static void fileInfo(String path) {
+        // /Users/likui/Desktop/Java/file/
         File file = new File(path);
         System.out.println(file.exists());
         System.out.println(file.getParent());
