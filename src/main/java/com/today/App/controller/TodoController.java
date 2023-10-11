@@ -1,10 +1,10 @@
 package com.today.App.controller;
 
+import com.today.App.util.Result;
 import com.today.App.mapper.TodoMapper;
 import com.today.App.entity.Todo;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -22,9 +22,9 @@ public class TodoController {
      * @return List
      */
     @GetMapping(value = "/todo/list")
-    public List<Todo> todoList(@RequestHeader Map<String, String> headers) {
+    public Result todoList(@RequestHeader Map<String, String> headers) {
         headers.forEach((key, value) -> System.out.println(key + " : " + value));
-        return todoMapper.todoList();
+        return Result.ok(todoMapper.todoList());
     }
 
     /**
@@ -33,7 +33,7 @@ public class TodoController {
      * @return boolean
      */
     @PostMapping(value = "/todo/add")
-    private boolean addTodo(@RequestBody Map<String, String> params) {
+    private Result addTodo(@RequestBody Map<String, String> params) {
         Todo todo = new Todo();
         todo.setTitle(params.get("title"));
         todo.setContent(params.get("content"));
@@ -41,7 +41,7 @@ public class TodoController {
         if (addResult) {
             System.out.println("新增成功!");
         }
-        return addResult;
+        return Result.ok(addResult);
     }
 
     /**
@@ -50,7 +50,7 @@ public class TodoController {
      * @return boolean
      */
     @PostMapping(value = "/todo/update/{id}")
-    private boolean updateTodo(@PathVariable int id, @RequestBody Map<String, String> params) {
+    private Result updateTodo(@PathVariable int id, @RequestBody Map<String, String> params) {
         Todo todo = new Todo();
         todo.setId(id);
         todo.setTitle(params.get("title"));
@@ -59,7 +59,7 @@ public class TodoController {
         if (updateResult) {
             System.out.println("ID为--" + id + "--的待办更新成功!");
         }
-        return updateResult;
+        return Result.ok(updateResult);
     }
 
     /**
@@ -68,12 +68,12 @@ public class TodoController {
      * @return boolean
      */
     @DeleteMapping(value = "/todo/delete/{id}")
-    private boolean deleteTodo(@PathVariable int id) {
+    private Result deleteTodo(@PathVariable int id) {
         boolean deleteResult = todoMapper.deleteTodo(id);
         if (deleteResult) {
             System.out.println("ID为--" + id + "--的待办删除成功!");
         }
-        return deleteResult;
+        return Result.ok(deleteResult);
     }
 
 }
