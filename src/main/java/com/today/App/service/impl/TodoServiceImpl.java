@@ -3,6 +3,7 @@ package com.today.App.service.impl;
 import com.today.App.entity.Todo;
 import com.today.App.mapper.TodoMapper;
 import com.today.App.service.TodoService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,11 +11,8 @@ import java.util.List;
 @Service
 public class TodoServiceImpl implements TodoService {
 
-    final TodoMapper todoMapper;
-
-    public TodoServiceImpl(TodoMapper todoMapper) {
-        this.todoMapper = todoMapper;
-    }
+    @Autowired
+    TodoMapper todoMapper;
 
     @Override
     public List<Todo> todoList() {

@@ -3,6 +3,7 @@ package com.today.App.controller;
 import com.today.App.service.TodoService;
 import com.today.App.util.Result;
 import com.today.App.entity.Todo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
@@ -10,11 +11,9 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api")
 public class TodoController {
-    final TodoService todoService;
 
-    public TodoController(TodoService todoService) {
-        this.todoService = todoService;
-    }
+    @Autowired
+    TodoService todoService;
 
     /**
      * 查询代办列表
