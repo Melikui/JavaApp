@@ -18,5 +18,5 @@ public class User {
     private String mobile;
     private String email;
     private String address;
-    private int isDelete;
+    private short isDelete;
 }

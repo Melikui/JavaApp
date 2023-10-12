@@ -2,12 +2,14 @@ package com.today.App.entity;
 
 import lombok.Data;
 
+import java.time.LocalDateTime;
+
 @Data
 public class Todo {
     private int id;
     private String title;
     private int selected;
     private String content;
-    private String create_time;
-    private String update_time;
+    private LocalDateTime create_time;
+    private LocalDateTime update_time;
 }
