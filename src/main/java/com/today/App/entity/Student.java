@@ -1,11 +1,17 @@
 package com.today.App.entity;
 
-import lombok.Data;
 
-@Data
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Student {
-    private Long id;
+    private Integer no;
     private String name;
-    private int sex;
+    private String sex;
     private int age;
+    private String email;
 };

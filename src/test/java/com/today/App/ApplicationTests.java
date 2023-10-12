@@ -1,6 +1,8 @@
 package com.today.App;
 
 
+import com.today.App.mapper.StudentMapper;
+import com.today.App.entity.Student;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,19 +10,23 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.*;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Set;
 
-@SpringBootTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @Slf4j
 class ApplicationTests {
     @Autowired
     private RedisTemplate<String, Object> redisTemplate;
+    @Autowired
+    private StudentMapper studentMapper;
 
     @Test
     public void dataString() {
-        redisTemplate.opsForValue().set("username", "melikui");
-        Object result = redisTemplate.opsForValue().get("username");
-        System.out.println(result);
+        List<Student> students = studentMapper.list();
+        for (Student student : students) {
+            System.out.println(student);
+        }
     }
 
     @Test

@@ -1,13 +1,14 @@
 package com.today.App.mapper;
 
 import com.today.App.entity.Student;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
+@Mapper
 public interface StudentMapper {
-    List<Student> selectAll();
-    Student selectOne(Long id);
-    void insert(Student student);
-    void update(Student student);
-    void delete(Long id);
+
+    @Select("select * from student")
+    List<Student> list();
 }

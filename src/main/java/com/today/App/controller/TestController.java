@@ -1,7 +1,9 @@
 package com.today.App.controller;
 
+import com.today.App.mapper.StudentMapper;
 import com.today.App.util.Result;
 import com.today.App.entity.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,6 +14,9 @@ import java.util.Map;
 @RequestMapping("/api")
 public class TestController {
 
+    @Autowired
+    private StudentMapper studentMapper;
+
     @GetMapping("/header/test")
     public Result getHeaders(@RequestHeader Map<String, String> headers) {
         headers.forEach((key, value) -> System.out.println(key + " : " + value));
@@ -21,7 +26,7 @@ public class TestController {
     @GetMapping("/get/test")
     public Result getTest(String name, Integer age) {
         System.out.println(name + "----" + age);
-        return Result.ok("get ok");
+        return Result.ok(studentMapper.list());
     }
 
     @GetMapping("/get/test1")
