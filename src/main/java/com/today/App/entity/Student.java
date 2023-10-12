@@ -14,4 +14,4 @@ public class Student {
     private String sex;
     private int age;
     private String email;
-};
+}
