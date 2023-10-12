@@ -1,7 +1,7 @@
 package com.today.App.controller;
 
-import com.today.App.mapper.UserMapper;
 import com.today.App.entity.User;
+import com.today.App.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.Parameters;
@@ -21,11 +21,12 @@ import java.util.List;
 @RequestMapping("/api")
 @Tag(name = "测试Swagger3", description = "测试Swagger3注解")
 public class UserController {
-    private final UserMapper userMapper;
+    private final UserService userService;
 
-    public UserController(UserMapper userMapper) {
-        this.userMapper = userMapper;
+    public UserController(UserService userService) {
+        this.userService = userService;
     }
+
 
     @GetMapping("/user/{username}")
     public String userInfo(@PathVariable String username) {
@@ -47,12 +48,7 @@ public class UserController {
     })
     @GetMapping("/user/list")
     public List<User> userList() {
-        List<User> users = userMapper.list();
-        log.info("用户信息: {}", users);
-        for (User item : users) {
-            System.out.println(item.toString());
-        }
-        return users;
+        return userService.list();
     }
 }
 

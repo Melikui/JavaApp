@@ -56,4 +56,4 @@ spring:
 mybatis:
   # mapper.xml配置文件的路径
   mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: com.today.App.model
+  # type-aliases-package: com.today.App.entity
