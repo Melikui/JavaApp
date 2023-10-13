@@ -69,4 +69,16 @@ public class Example {
         System.out.println(num);
         return num == 1 ? num : num * recursion(num - 1);
     }
+
+    /**
+     * 打印九九乘法表
+     */
+    public void multiplicationTable(){
+        for (int i = 1; i <= 9; i++) {
+            for (int j = 1; j < i + 1; j++) {
+                System.out.print(j + "*" + i + "=" + (j * i) + "\t");
+            }
+            System.out.println();
+        }
+    }
 }

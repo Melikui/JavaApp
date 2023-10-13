@@ -7,7 +7,7 @@
         FROM todo
     </select>
 
-    <insert id="addTodo" parameterType="com.today.App.entity.Todo">
+    <insert id="addTodo">
         INSERT INTO todo(title, content)
         VALUES (#{title}, #{content})
     </insert>

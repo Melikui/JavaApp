@@ -5,7 +5,7 @@
     <select id="list" resultType="com.today.App.entity.User">
         SELECT * FROM user
     </select>
-    <insert id="addUser" parameterType="com.today.App.entity.User">
+    <insert id="addUser">
         INSERT INTO user(name, age)
         VALUES (#{name}, #{age})
     </insert>

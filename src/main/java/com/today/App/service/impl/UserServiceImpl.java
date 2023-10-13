@@ -20,12 +20,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean add(User todo) {
-        return userMapper.add(todo);
+    public boolean add(User user) {
+        return userMapper.addUser(user);
     }
 
     @Override
-    public boolean update(User todo) {
+    public boolean update(User user) {
         return false;
     }
 
