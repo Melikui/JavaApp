@@ -49,6 +49,8 @@ public class Search {
      * @return boolean
      */
     public static boolean binarySearch(int[] list, int item) {
+        // 先对列表进行排序
+        Arrays.sort(list);
         // 1.定义两个变量记录要查找的范围
         int left = 0;
         int right = list.length - 1;
