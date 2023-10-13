@@ -28,7 +28,7 @@ public class Search {
      */
     public static boolean orderedSequentialSearch(int[] list, int item) {
         // 先对列表进行排序
-        Arrays.sort(list);
+        // Arrays.sort(list);
         for (int i : list) {
             if (i == item) {
                 return true;
@@ -50,7 +50,7 @@ public class Search {
      */
     public static boolean binarySearch(int[] list, int item) {
         // 先对列表进行排序
-        Arrays.sort(list);
+        // Arrays.sort(list);
         // 1.定义两个变量记录要查找的范围
         int left = 0;
         int right = list.length - 1;
