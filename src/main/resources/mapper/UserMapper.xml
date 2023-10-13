@@ -4,6 +4,14 @@
 
     <select id="list" resultType="com.today.App.entity.User">
         SELECT * FROM user
+<!--        <where>-->
+<!--            <if test="name != null">-->
+<!--                name like concat('%', #{name} ,'%')-->
+<!--            </if>-->
+<!--            <if test="sex != null">-->
+<!--                and sex = #{sex}-->
+<!--            </if>-->
+<!--        </where>-->
     </select>
     <insert id="addUser">
         INSERT INTO user(name, age)
