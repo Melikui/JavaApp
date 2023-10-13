@@ -1,6 +1,5 @@
 package com.today.App.controller;
 
-import com.today.App.entity.User;
 import com.today.App.service.UserService;
 import com.today.App.util.Result;
 import io.swagger.v3.oas.annotations.Operation;
@@ -16,7 +15,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
 
 @Slf4j
 @RestController
