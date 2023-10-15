@@ -1,6 +1,8 @@
 package algorithm;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 /**
  * 1. 冒泡排序（Bubble Sort）
@@ -18,7 +20,7 @@ public class Sort {
     /**
      * 1. 冒泡排序（Bubble Sort）
      *
-     * @param arr: arr
+     * @param arr: 列表
      */
     public static void bubbleSort(int[] arr) {
         int n = arr.length;
@@ -37,7 +39,7 @@ public class Sort {
     /**
      * 2. 选择排序（Selection Sort）
      *
-     * @param arr: arr
+     * @param arr: 列表
      */
     public static void selectionSort(int[] arr) {
         int n = arr.length;
@@ -57,7 +59,7 @@ public class Sort {
     /**
      * 3. 插入排序（Insertion Sort）
      *
-     * @param arr: arr
+     * @param arr: 列表
      */
     public static void insertionSort(int[] arr) {
         int n = arr.length;
@@ -75,10 +77,11 @@ public class Sort {
 
     /**
      * 4. 快速排序（Quick Sort）
+     * quickSort(arr, 0, arr.length - 1);
      *
-     * @param arr:  arr
-     * @param low:  low
-     * @param high: high
+     * @param arr:  列表
+     * @param low:  左侧索引
+     * @param high: 右侧索引
      */
     public static void quickSort(int[] arr, int low, int high) {
         if (low < high) {
@@ -109,10 +112,11 @@ public class Sort {
 
     /**
      * 5. 归并排序（Merge Sort）
+     * mergeSort(arr, 0, arr.length - 1);
      *
-     * @param arr:   arr
-     * @param left:  左侧下标
-     * @param right: 右侧下标
+     * @param arr:   列表
+     * @param left:  左侧索引
+     * @param right: 右侧索引
      */
     public static void mergeSort(int[] arr, int left, int right) {
         if (left < right) {
@@ -128,9 +132,7 @@ public class Sort {
         int n2 = right - mid;
         int[] L = new int[n1];
         int[] R = new int[n2];
-        for (int i = 0; i < n1; ++i) {
-            L[i] = arr[left + i];
-        }
+        System.arraycopy(arr, left, L, 0, n1);
         for (int j = 0; j < n2; ++j) {
             R[j] = arr[mid + 1 + j];
         }
@@ -161,7 +163,7 @@ public class Sort {
     /**
      * 6. 堆排序（Heap Sort）
      *
-     * @param arr: arr
+     * @param arr: 列表
      */
     public static void heapSort(int[] arr) {
         int n = arr.length;
@@ -197,7 +199,7 @@ public class Sort {
     /**
      * 7. 希尔排序（Shell Sort）
      *
-     * @param arr: arr
+     * @param arr: 列表
      */
     public static void shellSort(int[] arr) {
         int n = arr.length;
@@ -219,12 +221,12 @@ public class Sort {
     /**
      * 8. 计数排序（Counting Sort）
      *
-     * @param arr: arr
+     * @param arr: 列表
      */
     public static void countingSort(int[] arr) {
         int len = arr.length;
         // 确定计数数组的大小
-        int max = Arrays.stream(arr).max().getAsInt() + 1;
+        int max = Arrays.stream(arr).max().orElse(0) + 1;
         int[] count = new int[max];
         int[] output = new int[len];
         // 统计每个元素的出现次数
@@ -242,8 +244,84 @@ public class Sort {
         // 将排序结果复制回原数组
         System.arraycopy(output, 0, arr, 0, len);
     }
-    // 9. 桶排序（Bucket Sort）
-    // 10.基数排序（Radix Sort）
 
+    /**
+     * 9. 桶排序（Bucket Sort）
+     *
+     * @param arr:        列表
+     * @param bucketSize: 数量
+     */
+    public static void bucketSort(int[] arr, int bucketSize) {
+        if (arr.length < 2) {
+            return;
+        }
+        int minValue = arr[0];
+        int maxValue = arr[0];
+        for (int k : arr) {
+            if (k < minValue) {
+                minValue = k;
+            } else if (k > maxValue) {
+                maxValue = k;
+            }
+        }
+        int bucketCount = (maxValue - minValue) / bucketSize + 1;
+        ArrayList<ArrayList<Integer>> bucketArr = new ArrayList<>(bucketCount);
+        ArrayList<Integer> resultArr = new ArrayList<>();
+        for (int i = 0; i < bucketCount; i++) {
+            bucketArr.add(new ArrayList<Integer>());
+        }
+        for (int k : arr) {
+            bucketArr.get((k - minValue) / bucketSize).add(k);
+        }
+        for (int i = 0; i < bucketCount; i++) {
+            Collections.sort(bucketArr.get(i));
+            resultArr.addAll(bucketArr.get(i));
+        }
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = resultArr.get(i);
+        }
+    }
 
+    /**
+     * 10.基数排序（Radix Sort）
+     *
+     * @param arr: 列表
+     */
+    public static void radixSort(int[] arr) {
+        if (arr.length < 2) {
+            return;
+        }
+        int maxValue = getMaxValue(arr);
+        int exp = 1;
+        int[] temp = new int[arr.length];
+        while (maxValue / exp > 0) {
+            int[] count = new int[10];
+            // 统计每个桶中的元素个数
+            for (int j : arr) {
+                count[(j / exp) % 10]++;
+            }
+            // 累加每个桶中元素的个数，得到每个桶的结束位置
+            for (int i = 1; i < 10; i++) {
+                count[i] += count[i - 1];
+            }
+            // 从后往前遍历原数组，根据当前位的值放入相应的桶中
+            for (int i = arr.length - 1; i >= 0; i--) {
+                temp[--count[(arr[i] / exp) % 10]] = arr[i];
+            }
+            // 将排好序的桶中的元素复制回原数组
+            System.arraycopy(temp, 0, arr, 0, arr.length);
+            // 当前位乘以10，进入下一轮排序
+            exp *= 10;
+        }
+    }
+
+    private static int getMaxValue(int[] arr) {
+        int max = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+        return max;
+    }
 }
