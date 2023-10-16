@@ -2,10 +2,7 @@ package plugins;
 
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
-import com.mongodb.client.FindIterable;
-import com.mongodb.client.MongoClients;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.*;
 import org.bson.Document;
 
 
@@ -20,7 +17,7 @@ public class MongoDB {
             MongoClientSettings mongoClientSettings = MongoClientSettings.builder()
                     .applyConnectionString(new ConnectionString(url))
                     .build();
-            com.mongodb.client.MongoClient mongoClient = MongoClients.create(mongoClientSettings);
+            MongoClient mongoClient = MongoClients.create(mongoClientSettings);
             // 连接到数据库
             MongoDatabase mongoDatabase = mongoClient.getDatabase("spider");
             System.out.println("Connect to database successfully");
