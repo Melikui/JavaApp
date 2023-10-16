@@ -30,7 +30,7 @@ spring:
     mongodb:
       host: 127.0.0.1
       port: 27017
-      database: likui # 指定使用的数据库(集合)
+      database: likui
     # Redis 配置
     redis:
       host: 127.0.0.1
