@@ -4,9 +4,9 @@ public class Animal {
     private final String name;
     private final int id;
 
-    public Animal(String myName, int myid) {
-        name = myName;
-        id = myid;
+    public Animal(String name, int id) {
+        this.name = name;
+        this.id = id;
     }
 
     public void eat() {
@@ -23,14 +23,14 @@ public class Animal {
 }
 
 class Penguin extends Animal {
-    public Penguin(String myName, int myid) {
-        super(myName, myid);
+    public Penguin(String name, int id) {
+        super(name, id);
     }
 }
 
 class Mouse extends Animal {
-    public Mouse(String myName, int myid) {
-        super(myName, myid);
+    public Mouse(String name, int id) {
+        super(name, id);
     }
 }
 
