@@ -25,7 +25,7 @@ class ApplicationTests {
     public void dataString() {
         List<Student> students = studentMapper.list();
         for (Student student : students) {
-            System.out.println(student);
+            System.out.println("-----" + student.toString());
         }
     }
 
@@ -42,39 +42,43 @@ class ApplicationTests {
         System.out.println("kv1---" + kv1);
         System.out.println("kv2---" + kv2);
     }
+
     @Test
     public void testString() {
-        ValueOperations<String,Object> operations = redisTemplate.opsForValue();
+        ValueOperations<String, Object> operations = redisTemplate.opsForValue();
         // 调用set()方法创建缓存
-        operations.set("string","you");
+        operations.set("string", "you");
         // 获取缓存数据
-        String value=(String) operations.get("string");
-        System.out.println("string value :"+value);
+        String value = (String) operations.get("string");
+        System.out.println("string value :" + value);
     }
+
     @Test
     public void testHash() {
         HashOperations<String, Object, Object> hash = redisTemplate.opsForHash();
         // 调用put()方法创建Hash数据缓存
-        hash.put("hash","test","hello");
-        hash.put("hash","test","spring");
-        hash.put("hash","test","boot");
+        hash.put("hash", "test", "hello");
+        hash.put("hash", "test", "spring");
+        hash.put("hash", "test", "boot");
         // 获取Hash数据
-        String value=(String) hash.get("hash","you");
-        System.out.println("hash value :"+value);
+        String value = (String) hash.get("hash", "you");
+        System.out.println("hash value :" + value);
     }
+
     @Test
     public void testList() {
         ListOperations<String, Object> list = redisTemplate.opsForList();
         // 把数据插入到List的左边
-        list.leftPush("list","hello");
-        list.leftPush("list","spring");
-        list.leftPush("list","boot");
+        list.leftPush("list", "hello");
+        list.leftPush("list", "spring");
+        list.leftPush("list", "boot");
         // 从左边取出List中的数据
-        String value=(String)list.leftPop("list");
+        String value = (String) list.leftPop("list");
         if (value != null) {
-            System.out.println("list value :"+ value);
+            System.out.println("list value :" + value);
         }
     }
+
     @Test
     public void testSet() {
         String key = "set";

@@ -1,11 +1,11 @@
 package com.today.App.entity;
 
 
+import lombok.Data;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Getter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Student {
