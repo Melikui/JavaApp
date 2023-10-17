@@ -33,6 +33,5 @@ public class UploadController {
                 photo.transferTo(new File("/Users/likui/Desktop/Java/file/image/" + imgName));
             }
         }
-
     }
 }
