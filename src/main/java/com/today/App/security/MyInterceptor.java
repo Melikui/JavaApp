@@ -21,7 +21,7 @@ public class MyInterceptor implements HandlerInterceptor {
     }
 
     @Override
-    public void afterCompletion(@Nonnull HttpServletRequest request, @Nonnull HttpServletResponse response, @Nonnull Object handler, Exception ex) throws Exception {
+    public void afterCompletion(@Nonnull HttpServletRequest request, @Nonnull HttpServletResponse response, @Nonnull Object handler, Exception ex) {
         log.info("--- afterCompletion ---");
     }
 }
