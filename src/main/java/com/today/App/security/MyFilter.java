@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 
-//@Component
+@Component
 @Slf4j
 @WebFilter(urlPatterns = {"/*"})
 public class MyFilter implements Filter {
