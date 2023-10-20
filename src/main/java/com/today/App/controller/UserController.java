@@ -1,7 +1,7 @@
 package com.today.App.controller;
 
 import com.today.App.service.UserService;
-import com.today.App.util.Result;
+import com.today.App.util.JSONResult;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.Parameters;
@@ -44,8 +44,8 @@ public class UserController {
             @ApiResponse(responseCode = "404", description = "请求路径没有或页面跳转路径不对")
     })
     @GetMapping("/user/list")
-    public Result userList() {
-        return Result.ok(userService.list());
+    public JSONResult userList() {
+        return JSONResult.ok(userService.list());
     }
 }
 

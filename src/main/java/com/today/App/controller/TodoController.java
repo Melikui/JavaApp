@@ -1,7 +1,7 @@
 package com.today.App.controller;
 
 import com.today.App.service.TodoService;
-import com.today.App.util.Result;
+import com.today.App.util.JSONResult;
 import com.today.App.entity.Todo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -21,8 +21,8 @@ public class TodoController {
      * @return List
      */
     @GetMapping(value = "/todo/list")
-    public Result todoList() {
-        return Result.ok(todoService.todoList());
+    public JSONResult todoList() {
+        return JSONResult.ok(todoService.todoList());
     }
 
     /**
@@ -31,7 +31,7 @@ public class TodoController {
      * @return boolean
      */
     @PostMapping(value = "/todo/add")
-    private Result addTodo(@RequestBody Map<String, String> params) {
+    private JSONResult addTodo(@RequestBody Map<String, String> params) {
         Todo todo = new Todo();
         todo.setTitle(params.get("title"));
         todo.setContent(params.get("content"));
@@ -39,7 +39,7 @@ public class TodoController {
         if (addResult) {
             System.out.println("新增成功!");
         }
-        return Result.ok(addResult);
+        return JSONResult.ok(addResult);
     }
 
     /**
@@ -48,7 +48,7 @@ public class TodoController {
      * @return boolean
      */
     @PostMapping(value = "/todo/update/{id}")
-    private Result updateTodo(@PathVariable int id, @RequestBody Map<String, String> params) {
+    private JSONResult updateTodo(@PathVariable int id, @RequestBody Map<String, String> params) {
         Todo todo = new Todo();
         todo.setId(id);
         todo.setTitle(params.get("title"));
@@ -57,7 +57,7 @@ public class TodoController {
         if (updateResult) {
             System.out.println("ID为--" + id + "--的待办更新成功!");
         }
-        return Result.ok(updateResult);
+        return JSONResult.ok(updateResult);
     }
 
     /**
@@ -66,12 +66,12 @@ public class TodoController {
      * @return boolean
      */
     @DeleteMapping(value = "/todo/delete/{id}")
-    private Result deleteTodo(@PathVariable int id) {
+    private JSONResult deleteTodo(@PathVariable int id) {
         boolean deleteResult = todoService.deleteTodo(id);
         if (deleteResult) {
             System.out.println("ID为--" + id + "--的待办删除成功!");
         }
-        return Result.ok(deleteResult);
+        return JSONResult.ok(deleteResult);
     }
 
 }

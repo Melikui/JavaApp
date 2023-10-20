@@ -1,7 +1,7 @@
 package com.today.App.controller;
 
 import com.today.App.mapper.StudentMapper;
-import com.today.App.util.Result;
+import com.today.App.util.JSONResult;
 import com.today.App.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -18,15 +18,15 @@ public class TestController {
     private StudentMapper studentMapper;
 
     @GetMapping("/header/test")
-    public Result getHeaders(@RequestHeader Map<String, String> headers) {
+    public JSONResult getHeaders(@RequestHeader Map<String, String> headers) {
         headers.forEach((key, value) -> System.out.println(key + " : " + value));
-        return Result.ok(headers);
+        return JSONResult.ok(headers);
     }
 
     @GetMapping("/get/test")
-    public Result getTest(String name, Integer age) {
+    public JSONResult getTest(String name, Integer age) {
         System.out.println(name + "----" + age);
-        return Result.ok(studentMapper.list());
+        return JSONResult.ok(studentMapper.list());
     }
 
     @GetMapping("/get/test1")
@@ -50,19 +50,19 @@ public class TestController {
     }
 
     @PostMapping("/post/test")
-    public Result postTest(User user) {
+    public JSONResult postTest(User user) {
         System.out.println(user);
-        return Result.ok(user);
+        return JSONResult.ok(user);
     }
 
     @PostMapping("/post/json")
-    public Result jsonTest(@RequestBody Map<String, Object> body) {
+    public JSONResult jsonTest(@RequestBody Map<String, Object> body) {
         System.out.println(body);
         System.out.println(body.get("name"));
         System.out.println(body.get("age"));
         System.out.println(body.get("boy"));
         System.out.println(body.get("address"));
-        return Result.ok(body);
+        return JSONResult.ok(body);
     }
 
     @GetMapping("/put/{id}")
