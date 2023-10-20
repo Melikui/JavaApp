@@ -52,7 +52,8 @@ public class TestController {
     @PostMapping("/post/test")
     public JSONResult postTest(User user) {
         System.out.println(user);
-        return JSONResult.ok(user);
+        throw new RuntimeException("计算错误");
+//        return JSONResult.ok(user);
     }
 
     @PostMapping("/post/json")
