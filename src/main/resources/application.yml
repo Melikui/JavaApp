@@ -58,5 +58,5 @@ mybatis:
   mapper-locations: classpath:mapper/*.xml
   # type-aliases-package: com.today.App.entity
   # 打印 mysql 日志
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
