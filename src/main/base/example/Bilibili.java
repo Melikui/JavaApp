@@ -26,6 +26,6 @@ public class Bilibili {
             System.out.println(itemValue);
             content.append(itemValue);
         }
-        fileWrite("/Users/likui/Desktop/Java/file/text/bilibili.txt", content.toString());
+        fileWrite("/Users/likui/Desktop/Java/file/text/bilibili.txt", content.toString(),true);
     }
 }

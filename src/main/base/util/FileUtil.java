@@ -32,9 +32,9 @@ public class FileUtil {
         File file = new File(path);
         String content;
         FileInputStream in = new FileInputStream(file);
-        byte[] byt = new byte[1024];
-        int len = in.read(byt);
-        content = new String(byt, 0, len);
+        byte[] b = new byte[1024];
+        int len = in.read(b);
+        content = new String(b, 0, len);
         in.close();
         return content;
     }
@@ -42,8 +42,8 @@ public class FileUtil {
     public static void fileStreamWrite(String path, String content) throws IOException {
         File file = new File(path);
         FileOutputStream out = new FileOutputStream(file);
-        byte[] buy = content.getBytes();
-        out.write(buy);
+        byte[] b = content.getBytes();
+        out.write(b);
         out.close();
     }
 
@@ -60,8 +60,8 @@ public class FileUtil {
         return content.toString();
     }
 
-    public static void fileWrite(String path, String content) throws IOException {
-        FileWriter fw = new FileWriter(path);
+    public static void fileWrite(String path, String content, boolean append) throws IOException {
+        FileWriter fw = new FileWriter(path, append);
         fw.write(content);
         fw.close();
     }
@@ -80,8 +80,8 @@ public class FileUtil {
         return content.toString();
     }
 
-    public static void bufferedWrite(String path, String content) throws IOException {
-        FileWriter fw = new FileWriter(path);
+    public static void bufferedWrite(String path, String content, boolean append) throws IOException {
+        FileWriter fw = new FileWriter(path, append);
         BufferedWriter bw = new BufferedWriter(fw);
         bw.write(content);
         bw.close();
