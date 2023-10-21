@@ -10,22 +10,22 @@ import java.io.IOException;
 @Component
 @Slf4j
 @WebFilter(urlPatterns = {"/*"})
-public class MyFilter implements Filter {
+public class AuthFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) {
-        // log.info("--- filter init ---");
+         log.info("--- filter init ---");
     }
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-        // log.info("--- doFilter ---");
+         log.info("--- doFilter ---");
         // 对 request,response 进行预处理
         filterChain.doFilter(request, response);
     }
 
     @Override
     public void destroy() {
-        // log.info("--- filter destroy ---");
+         log.info("--- filter destroy ---");
     }
 }
 
