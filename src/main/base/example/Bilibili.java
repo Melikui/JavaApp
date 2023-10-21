@@ -5,11 +5,13 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import java.io.IOException;
+
 import static util.FileUtil.fileRead;
 import static util.FileUtil.fileWrite;
 
 public class Bilibili {
-    public static void getDirectory(){
+    public static void getDirectory() throws IOException {
         String html = fileRead("/Users/likui/Desktop/Java/file/html/bilibili.html");
         // 创建 Document 对象
         Document document = Jsoup.parse(html);

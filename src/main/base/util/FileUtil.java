@@ -5,6 +5,7 @@ import java.io.*;
 /**
  * 文件操作类
  * /Users/likui/Desktop/Java/file/
+ * /Users/likui/Desktop/Java/file/text/foo.txt
  */
 public class FileUtil {
     public static void fileInfo(String path) {
@@ -21,104 +22,69 @@ public class FileUtil {
         }
     }
 
-    public static void createFile(String path) {
+    public static void createFile(String path) throws IOException {
         File file = new File(path);
-        try {
-            boolean createResult = file.createNewFile();
-            System.out.println(createResult + "文件已经创建");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        boolean createResult = file.createNewFile();
+        System.out.println(createResult + "文件已经创建");
     }
 
-    public static String fileStreamRead(String path) {
+    public static String fileStreamRead(String path) throws IOException {
         File file = new File(path);
         String content;
-        try {
-            FileInputStream in = new FileInputStream(file);
-            byte[] byt = new byte[1024];
-            int len = in.read(byt);
-            content = new String(byt, 0, len);
-            in.close();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        FileInputStream in = new FileInputStream(file);
+        byte[] byt = new byte[1024];
+        int len = in.read(byt);
+        content = new String(byt, 0, len);
+        in.close();
         return content;
     }
 
-    public static void fileStreamWrite(String path, String content) {
+    public static void fileStreamWrite(String path, String content) throws IOException {
         File file = new File(path);
-        try {
-            FileOutputStream out = new FileOutputStream(file);
-            byte[] buy = content.getBytes();
-            out.write(buy);
-            out.close();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        FileOutputStream out = new FileOutputStream(file);
+        byte[] buy = content.getBytes();
+        out.write(buy);
+        out.close();
     }
 
-    public static String fileRead(String path) {
-        File file = new File(path);
+    public static String fileRead(String path) throws IOException {
         StringBuilder content = new StringBuilder();
-        try {
-            FileReader fr = new FileReader(file);
-            int n = fr.read();
-            while (n != -1) {
-                n = fr.read();
-                content.append((char) n);
-            }
-            fr.close();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        FileReader fr = new FileReader(path);
+        int n = fr.read();
+        while (n != -1) {
+            char ch = (char) n;
+            content.append(ch);
+            n = fr.read();
         }
+        fr.close();
         return content.toString();
     }
 
-    public static void fileWrite(String path, String content) {
-        File file = new File(path);
-        try {
-            FileWriter fw = new FileWriter(file);
-            fw.write(content);
-            fw.close();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+    public static void fileWrite(String path, String content) throws IOException {
+        FileWriter fw = new FileWriter(path);
+        fw.write(content);
+        fw.close();
     }
 
-    public static String bufferedRead(String path) {
-        File file = new File(path);
+    public static String bufferedRead(String path) throws IOException {
         StringBuilder content = new StringBuilder();
-        try {
-            FileReader fr = new FileReader(file);
-            BufferedReader br = new BufferedReader(fr);
-            String line = br.readLine();
-            System.out.println(line);
-            String str = "";
-            while ((str = br.readLine()) != null) {
-                line = br.readLine();
-                str = str + "\n";
-                line = line + "\n";
-                content.append(str).append(line);
-            }
-            br.close();
-            fr.close();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        FileReader fr = new FileReader(path);
+        BufferedReader br = new BufferedReader(fr);
+        String data;
+        while ((data = br.readLine()) != null) {
+            data = data + "\n";
+            content.append(data);
         }
+        br.close();
+        fr.close();
         return content.toString();
     }
 
-    public static void bufferedWrite(String path, String content) {
-        File file = new File(path);
-        try {
-            FileWriter fw = new FileWriter(file);
-            BufferedWriter bw = new BufferedWriter(fw);
-            bw.write(content);
-            bw.close();
-            fw.close();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+    public static void bufferedWrite(String path, String content) throws IOException {
+        FileWriter fw = new FileWriter(path);
+        BufferedWriter bw = new BufferedWriter(fw);
+        bw.write(content);
+        bw.close();
+        fw.close();
     }
 }
