@@ -85,7 +85,7 @@ public class ATM {
                     this.getMoney(scanner.nextInt());
                 }
                 default -> {
-                    System.out.println("程序退出啦");
+                    System.out.println("\n----------- 退出程序 -----------");
                     return;
                 }
             }
