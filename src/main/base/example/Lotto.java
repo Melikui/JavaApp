@@ -61,7 +61,7 @@ public class Lotto {
         for (int i = 0; i < 6; ) {
             System.out.println("请输入第" + (i + 1) + "个红球号码");
             int redNumber = scanner.nextInt();
-            // redNumbe 在1～33 唯一不重复
+            // redNumber 在1～33 唯一不重复
             if (redNumber >= 1 && redNumber <= 33) {
                 boolean flag = contains(arr, redNumber);
                 if (!flag) {
