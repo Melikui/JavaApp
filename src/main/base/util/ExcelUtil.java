@@ -6,7 +6,6 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class ExcelUtil {
     static String Path = "/Users/likui/Desktop/Java/file/wps/";
@@ -62,9 +61,7 @@ public class ExcelUtil {
                     value = (int) cell.getNumericCellValue();
                 }
             }
-            default -> {
-                System.out.println("暂无此类型！");
-            }
+            default -> {}
         }
         //最后根据不同的数据类型获取到了我们想要的值
         return value;
