@@ -9,7 +9,7 @@ import java.io.IOException;
 
 @Component
 @Slf4j
-@WebFilter(urlPatterns = {"/*"})
+@WebFilter(urlPatterns = {"/**"})
 public class AuthFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) {

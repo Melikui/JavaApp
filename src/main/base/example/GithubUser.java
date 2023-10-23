@@ -1,15 +1,14 @@
 package example;
 
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
-import org.apache.tomcat.util.json.JSONParser;
 import org.apache.tomcat.util.json.ParseException;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.io.IOException;
 
@@ -24,10 +23,13 @@ public class GithubUser {
         if (response.getStatusLine().getStatusCode() == 200) {
             HttpEntity entity = response.getEntity();
             String responseJson = EntityUtils.toString(entity, "UTF-8");
-            JSONArray users = JSONObject.parseObject(responseJson).getJSONArray("items");
+            org.json.JSONArray users =(JSONArray) ((new org.json.JSONObject(responseJson)).get("items"));
+            System.out.println(users);
             for (Object user : users) {
-                System.out.println(new JSONParser(user.toString()).parseObject().get("avatar_url"));
-                System.out.println(JSONObject.parseObject(user.toString()).get("gists_url"));
+                org.json.JSONObject userMap = (JSONObject)user;
+                System.out.println(userMap.get("login"));
+                System.out.println(userMap.get("url"));
+                System.out.println(userMap.get("avatar_url"));
             }
         }
         httpClient.close();
