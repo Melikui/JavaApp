@@ -8,9 +8,12 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.*;
+import org.springframework.jdbc.core.JdbcTemplate;
 
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -20,6 +23,19 @@ class ApplicationTests {
     private RedisTemplate<String, Object> redisTemplate;
     @Autowired
     private StudentMapper studentMapper;
+
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
+
+    @Test
+    public void jdbcQuery() {
+        List<Map<String, Object>> users = jdbcTemplate.queryForList("select * from user ");
+        users.forEach(user -> {
+            System.out.println(user);
+            System.out.println("姓名：" + user.get("name"));
+            System.out.println("职位：" + user.get("position"));
+        });
+    }
 
     @Test
     public void dataString() {

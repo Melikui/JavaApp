@@ -11,17 +11,17 @@ import org.springframework.web.servlet.ModelAndView;
 public class AuthInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(@Nonnull HttpServletRequest request, @Nonnull HttpServletResponse response, @Nonnull Object handler) {
-         log.info("--- preHandle ---");
+        // log.info("--- preHandle ---");
         return true;
     }
 
     @Override
     public void postHandle(@Nonnull HttpServletRequest request, @Nonnull HttpServletResponse response, @Nonnull Object handler, ModelAndView modelAndView) {
-         log.info("--- postHandle ---");
+        // log.info("--- postHandle ---");
     }
 
     @Override
     public void afterCompletion(@Nonnull HttpServletRequest request, @Nonnull HttpServletResponse response, @Nonnull Object handler, Exception ex) {
-         log.info("--- afterCompletion ---");
+        // log.info("--- afterCompletion ---");
     }
 }
