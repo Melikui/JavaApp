@@ -1,9 +1,26 @@
 package example;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Example {
     public Example() {
+    }
+
+    /**
+     * 求斐波那契数列
+     */
+    public static ArrayList<Integer> fib(int n) {
+        ArrayList<Integer> list = new ArrayList<>();
+        int i = 0;
+        int j = 1;
+        while (i < n) {
+            list.add(i);
+            int temp = i;
+            i = j;
+            j = i + temp;
+        }
+        return list;
     }
 
     public void test() {
