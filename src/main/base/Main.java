@@ -1,8 +1,13 @@
-import lombok.extern.slf4j.Slf4j;
+import java.util.ArrayList;
 
-@Slf4j
 public class Main {
     public static void main(String[] args) {
-        log.info("日志记录: {}", 666);
+        int[] arr = {1, 35, 4, 2, 3};
+        ArrayList<Object> list = new ArrayList<>();
+        list.add("A");
+        list.add(10);
+        list.add(arr);
+        System.out.println(((int[])list.get(2))[2]);
+        list.forEach(i -> System.out.println("---" + i));
     }
 }
