@@ -84,7 +84,7 @@ public class Example {
      */
     public static int recursion(int num) {
         System.out.println(num);
-        return num == 1 ? num : num * recursion(num - 1);
+        return num <= 1 ? num : num * recursion(num - 1);
     }
 
     /**

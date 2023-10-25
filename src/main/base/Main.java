@@ -2,7 +2,11 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(fib(1000));
+
+    }
+
+    public static int factorial(int n) {
+        return n <= 1 ? n : n * factorial(n - 1);
     }
 
     public static ArrayList<Integer> fib(int n) {
