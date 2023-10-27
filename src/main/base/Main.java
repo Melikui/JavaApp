@@ -1,13 +1,19 @@
-import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class Main {
     // -----------------------------------
-    public static void main(String[] args) {
-        String str = "Hello world ,Hello Java";
-        int index = str.lastIndexOf("o");
-        System.out.println("index： " + index);
-        System.out.println(str.replace("H","K"));
-        System.out.println(new StringBuffer(str).reverse());
+    public static void main(String[] args) throws IOException {
+        StringBuilder content = new StringBuilder();
+        FileReader fr = new FileReader("file/text/bilibili.txt");
+        int len;
+        while ((len = fr.read()) != -1) {
+            char ch = (char) len;
+            content.append(ch);
+        }
+        fr.close();
+        System.out.println(content);
     }
     // -----------------------------------
 }

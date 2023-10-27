@@ -14,6 +14,7 @@ import java.io.IOException;
  * /Users/likui/Desktop/Java/file/
  * /Users/likui/Desktop/Java/file/text/foo.txt
  */
+
 public class FileUtil {
     public static void fileInfo(String path) {
         File file = new File(path);
@@ -36,32 +37,32 @@ public class FileUtil {
     }
 
     public static String fileStreamRead(String path) throws IOException {
-        File file = new File(path);
-        String content;
-        FileInputStream in = new FileInputStream(file);
-        byte[] b = new byte[1024];
-        int len = in.read(b);
-        content = new String(b, 0, len);
-        in.close();
-        return content;
+        StringBuilder content = new StringBuilder();
+        FileInputStream fis = new FileInputStream(path);
+        byte[] bytes = new byte[1024];
+        int len;
+        while ((len = fis.read(bytes)) != -1) {
+            content.append(new String(bytes, 0, len));
+        }
+        System.out.println(content);
+        fis.close();
+        return content.toString();
     }
 
     public static void fileStreamWrite(String path, String content) throws IOException {
-        File file = new File(path);
-        FileOutputStream out = new FileOutputStream(file);
-        byte[] b = content.getBytes();
-        out.write(b);
-        out.close();
+        FileOutputStream fos = new FileOutputStream(path);
+        byte[] bytes = content.getBytes();
+        fos.write(bytes);
+        fos.close();
     }
 
     public static String fileRead(String path) throws IOException {
         StringBuilder content = new StringBuilder();
         FileReader fr = new FileReader(path);
-        int n = fr.read();
-        while (n != -1) {
-            char ch = (char) n;
+        int len;
+        while ((len = fr.read()) != -1) {
+            char ch = (char) len;
             content.append(ch);
-            n = fr.read();
         }
         fr.close();
         return content.toString();

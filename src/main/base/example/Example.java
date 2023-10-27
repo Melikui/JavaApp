@@ -95,7 +95,7 @@ public class Example {
             list.add(i);
             int temp = i;
             i = j;
-            j = i + temp;
+            j = j + temp;
         }
         return list;
     }
