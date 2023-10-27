@@ -1,11 +1,16 @@
+import example.MyThread;
+
 import java.util.Arrays;
 
 public class Main {
     // -----------------------------------
     public static void main(String[] args) {
-        int[] arr = {1, 33, 25, 8, 16, 23, 53, 73, 21};
-        Arrays.sort(arr);
-        System.out.println(Arrays.toString(arr));
+        MyThread mt1 = new MyThread();
+        MyThread mt2 = new MyThread();
+        mt1.start();
+        mt2.start();
+        mt1.setName("***");
+        mt2.setName("###");
     }
     // -----------------------------------
 
