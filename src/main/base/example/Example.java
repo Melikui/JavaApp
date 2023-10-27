@@ -159,9 +159,9 @@ public class Example {
     /**
      * 递归求阶乘
      */
-    public static int recursion(int num) {
+    public static int factorial(int num) {
         System.out.println(num);
-        return num <= 1 ? num : num * recursion(num - 1);
+        return num <= 1 ? num : num * factorial(num - 1);
     }
 
     /**
