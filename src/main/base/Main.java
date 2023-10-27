@@ -44,7 +44,7 @@ public class Main {
         int left = arr[0];
         int right = arr.length - 1;
         while (left <= right) {
-            int mid = (left + right) / 2;
+            int mid = (left + right) >>> 2;
             if (arr[mid] == target) {
                 return mid;
             } else {
