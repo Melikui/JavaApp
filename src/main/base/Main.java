@@ -1,19 +1,18 @@
 import java.io.FileInputStream;
-import java.io.FileReader;
 import java.io.IOException;
 
 public class Main {
     // -----------------------------------
     public static void main(String[] args) throws IOException {
         StringBuilder content = new StringBuilder();
-        FileReader fr = new FileReader("file/text/bilibili.txt");
+        FileInputStream fis = new FileInputStream("file/mysql/mysql.sql");
+        byte[] bytes = new byte[1024];
         int len;
-        while ((len = fr.read()) != -1) {
-            char ch = (char) len;
-            content.append(ch);
+        while ((len = fis.read(bytes)) != -1) {
+            content.append(new String(bytes, 0, len));
         }
-        fr.close();
         System.out.println(content);
+        fis.close();
     }
     // -----------------------------------
 }
