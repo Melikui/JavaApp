@@ -1,6 +1,13 @@
 package example;
 
 public class MyThread extends Thread {
+    public MyThread() {
+    }
+
+    public MyThread(String name) {
+        super(name);
+    }
+
     @Override
     public void run(){
         // 线程要执行的代码
@@ -9,3 +16,4 @@ public class MyThread extends Thread {
         }
     }
 }
+

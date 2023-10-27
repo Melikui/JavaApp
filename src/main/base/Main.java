@@ -10,20 +10,20 @@ import java.util.concurrent.FutureTask;
 public class Main {
     // -----------------------------------
     public static void main(String[] args) throws ExecutionException, InterruptedException {
-        // MyThread mt1 = new MyThread();
-        // MyThread mt2 = new MyThread();
-        // mt1.start();
-        // mt2.start();
-        // mt1.setName("***");
-        // mt2.setName("###");
+         MyThread mt1 = new MyThread("***");
+         MyThread mt2 = new MyThread("###");
+         mt1.start();
+         mt2.start();
+//         mt1.setName("***");
+//         mt2.setName("###");
 
-        MyRunnable mr = new MyRunnable();
-        Thread t1 = new Thread(mr);
-        Thread t2 = new Thread(mr);
-        t1.setName("***");
-        t2.setName("###");
-        t1.start();
-        t2.start();
+        // MyRunnable mr = new MyRunnable();
+        // Thread t1 = new Thread(mr);
+        // Thread t2 = new Thread(mr);
+        // t1.setName("***");
+        // t2.setName("###");
+        // t1.start();
+        // t2.start();
 
 
 
