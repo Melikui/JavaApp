@@ -1,10 +1,87 @@
 package example;
 
+import java.io.File;
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.Socket;
+import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Example {
     public Example() {
+    }
+    /**
+     * 打印目录结构
+     */
+    static void showDir(int indent, File file) throws IOException {
+        for (int i = 0; i < indent; i++) {
+            System.out.print('-');
+        }
+        System.out.println(file.getName());
+        if (file.isDirectory()) {
+            File[] files = file.listFiles();
+            if (files != null) {
+                for (File value : files) showDir(indent + 4, value);
+            }
+        }
+    }
+
+    /**
+     * 遍历目录
+     */
+    public static void visitAllDirsAndFiles(File dir) {
+        System.out.println(dir);
+        if (dir.isDirectory()) {
+            String[] children = dir.list();
+            if (children != null) {
+                for (String child : children) {
+                    visitAllDirsAndFiles(new File(dir, child));
+                }
+            }
+        }
+    }
+
+    /**
+     * 获取本机ip地址及主机名
+     */
+    public static void getLocalIP() throws UnknownHostException {
+        InetAddress addr = InetAddress.getLocalHost();
+        String address = addr.getHostAddress();
+        String name = addr.getHostName();
+        System.out.println("Local HostAddress:" + address);
+        System.out.println("Local host name: " + name);
+    }
+
+    /**
+     * 获取指定域名IP
+     */
+    public static void getIP() throws UnknownHostException {
+        InetAddress address = InetAddress.getByName("www.baidu.com");
+        System.out.println(address.getHostName() + "=" + address.getHostAddress());
+    }
+
+    /**
+     * 查看端口是否被占用
+     */
+    public static void checkPort() throws IOException {
+        Socket Skt = null;
+        String host = "localhost";
+        for (int i = 0; i < 1024; i++) {
+            try {
+                System.out.println("查看 " + i);
+                Skt = new Socket(host, i);
+                System.out.println("端口 " + i + " 已被使用");
+            } catch (UnknownHostException e) {
+                System.out.println("Exception occured" + e);
+                break;
+            } catch (IOException ignored) {
+            } finally {
+                if (Skt != null) {
+                    Skt.close();
+                }
+            }
+        }
     }
 
     /**
