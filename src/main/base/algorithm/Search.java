@@ -65,7 +65,7 @@ public class Search {
         // 2.利用循环不断的去找要查找的数据
         while (left <= right) {
             // 3.找到 min 和 max 的中间位置
-            // int mid = (left + right) / 2;
+            // int mid = (left + right) / 2;  // 数据太大不安全
             int mid = (left + right) >>> 2;
             // 4.拿着mid指向的元素跟要查找的元素进行比较
             if (arr[mid] == target) {
