@@ -11,6 +11,16 @@ public class Stack {
         System.out.println("top---" + ss.peek());
         System.out.println("pop---" + ss.pop());
         System.out.println("top---" + ss.peek());
+
+        LinkStack<Integer> ls = new LinkStack<>();
+        ls.push(1);
+        ls.push(2);
+        ls.push(3);
+        ls.push(4);
+        ls.nextOrder();
+        System.out.println("peek---" + ls.peek());
+        System.out.println("pop---" + ls.pop());
+        System.out.println("peek---" + ls.peek());
     }
 }
 
@@ -136,7 +146,7 @@ class LinkStack<T> {
     }
 
     // 取栈顶数据元素
-    public T getHead() {
+    public T peek() {
         if (top == null) {
             System.out.println("栈已空，无法读取元素！");
             return null;
