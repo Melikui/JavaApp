@@ -57,6 +57,7 @@ mybatis:
   # mapper.xml配置文件的路径
   mapper-locations: classpath:mapper/*.xml
   # type-aliases-package: com.today.App.entity
-  # 打印 mysql 日志
-#  configuration:
-#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  configuration:
+    map-underscore-to-camel-case: true
+    # 打印 mysql 日志
+    # log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
