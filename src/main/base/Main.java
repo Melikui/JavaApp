@@ -1,9 +1,8 @@
-import java.io.IOException;
 import java.util.Arrays;
 
 public class Main {
     // -----------------------------------
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         int[] arr = {1, 9, 6, 5, 2, 3, 4, 8, 7, 10, 0};
         shellSort(arr);
         System.out.println(Arrays.toString(arr));
