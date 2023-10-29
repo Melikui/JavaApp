@@ -1,6 +1,5 @@
 README.md
 target/
-file/video
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
@@ -16,7 +15,6 @@ file/video
 
 ### IntelliJ IDEA ###
 .idea
-.mvn
 *.iws
 *.iml
 *.ipr
