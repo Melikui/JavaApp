@@ -1,4 +1,4 @@
-package example;
+package astudy.object;
 
 public class Person {
     public String name = "person-name";

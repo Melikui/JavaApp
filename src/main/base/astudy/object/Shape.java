@@ -1,4 +1,4 @@
-package example;
+package astudy.object;
 
 public class Shape {
     void draw() {

@@ -1,5 +1,7 @@
 package example;
 
+import interfaces.Callback;
+
 import java.util.Timer;
 import java.util.TimerTask;
 

@@ -1,4 +1,4 @@
-package example;
+package astudy.thread;
 
 import java.util.concurrent.Callable;
 

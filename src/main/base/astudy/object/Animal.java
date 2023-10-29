@@ -1,4 +1,4 @@
-package example;
+package astudy.object;
 
 public class Animal {
     private final String name;

@@ -18,7 +18,7 @@ public class UploadController {
      */
     @PostMapping("/upload")
     public void upload(
-            @RequestPart("file") MultipartFile file,
+            @RequestPart("astudy/file") MultipartFile file,
             @RequestPart("image") MultipartFile image,
             @RequestPart("photos") MultipartFile[] photos
     ) throws IOException {

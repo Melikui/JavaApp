@@ -1,4 +1,4 @@
-package example;
+package astudy.thread;
 
 public class MyThread extends Thread {
     public MyThread() {

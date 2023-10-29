@@ -1,4 +1,4 @@
-package example;
+package interfaces;
 
 public interface Callback {
 

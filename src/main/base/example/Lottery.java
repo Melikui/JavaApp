@@ -3,7 +3,7 @@ package example;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Lotto {
+public class Lottery {
     public static void main(String[] args) {
         // 1,生成中奖号码
         int[] arr = createNumber();
