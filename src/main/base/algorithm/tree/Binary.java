@@ -1,4 +1,4 @@
-package algorithm;
+package algorithm.tree;
 
 /**
  * 二分搜索树查找

@@ -1,4 +1,4 @@
-import algorithm.SequenceList;
+import algorithm.squence.SequenceList;
 
 public class Main {
     // -----------------------------------

@@ -20,6 +20,22 @@ import java.util.Collections;
  */
 public class Sort {
     /**
+     * 比较v元素是否大于w元素
+     */
+    private static boolean compare(int v, int w) {
+        return v > w;
+    }
+
+    /**
+     * 数组元素i和j交换位置
+     */
+    private static void swap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+
+    /**
      * 1. 冒泡排序（Bubble Sort）
      *
      * @param arr: 列表
@@ -104,12 +120,6 @@ public class Sort {
         }
         swap(arr, i + 1, high);
         return i + 1;
-    }
-
-    public static void swap(int[] arr, int i, int j) {
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
     }
 
     /**

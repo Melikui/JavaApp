@@ -1,4 +1,4 @@
-package algorithm;
+package algorithm.squence;
 
 /**
  * 线性表之顺序表
@@ -137,6 +137,7 @@ public class SequenceList<T> {
     public void clear() {
         length = 0;
     }
+
 
     /**
      * 测试

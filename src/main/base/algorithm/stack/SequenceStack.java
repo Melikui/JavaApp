@@ -1,4 +1,4 @@
-package algorithm;
+package algorithm.stack;
 
 /**
  * 顺序栈
