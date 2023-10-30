@@ -1,13 +1,24 @@
-import java.util.UUID;
+import algorithm.SequenceList;
 
 public class Main {
     // -----------------------------------
     public static void main(String[] args) {
-        for (int i = 0; i < 10; i++) {
-            String uuid = UUID.randomUUID().toString();
-            uuid = uuid.replace("-", "");
-            System.out.println(uuid);
+        SequenceList<Integer> L = new SequenceList<>();
+        int status, e, i;
+        int[] a = {23, 56, 12, 49, 35};
+        for (i = 0; i < a.length; i++) {
+            L.add(a[i], i + 1);   //将数组中个元素插入到顺序表中
         }
+        System.out.println("顺序表中的数据元素为：");
+        L.nextOrder();
+        L.add(30, 4);
+        System.out.println("执行插入操作后顺序表中的数据元素为：");
+        L.nextOrder();
+        e = L.remove(5);
+        System.out.println("执行删除操作后顺序表中的数据元素为：");
+        L.nextOrder();
+        i = L.find(12);        //在顺序表L中查找元素12的位序
+        System.out.println("元素12在线性表中的位序为:" + i);
     }
 
     // -----------------------------------

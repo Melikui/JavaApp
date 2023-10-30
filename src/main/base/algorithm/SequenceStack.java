@@ -6,14 +6,14 @@ package algorithm;
  * @param <T>
  */
 public class SequenceStack<T> {
-    final int MaxSize = 10;
+    final int SIZE = 10;
     private T[] stackArray;
     private int top;
 
     @SuppressWarnings("unchecked")
     public SequenceStack() {
         top = -1;
-        stackArray = (T[]) new Object[MaxSize];
+        stackArray = (T[]) new Object[SIZE];
     }
 
     @SuppressWarnings("unchecked")
