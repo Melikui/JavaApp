@@ -3,7 +3,7 @@ package astudy.network;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
-public class Main {
+public class Test {
     public static void main(String[] args) throws UnknownHostException {
         InetAddress address = InetAddress.getByName("www.baidu.com");
         System.out.println(address);
