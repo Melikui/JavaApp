@@ -22,7 +22,11 @@ public class AuthFilter implements Filter {
     }
 
     @Override
-    public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain) throws IOException, ServletException {
+    public void doFilter(
+            ServletRequest request,
+            ServletResponse response,
+            FilterChain filterChain
+    ) throws IOException, ServletException {
         // log.info("--- doFilter ---");
         // 对 request,response 进行预处理
         filterChain.doFilter(request, response);
