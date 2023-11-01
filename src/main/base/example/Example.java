@@ -6,11 +6,30 @@ import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Example {
-    public Example() {
+
+
+    /**
+     * 生成字母
+     */
+    public static void generateLetters() {
+        // A-Z:65-90, a-z:97-122
+        char[] arr1 = new char[26];
+        char[] arr2 = new char[26];
+        String[] arr = new String[26];
+        for (int i = 65; i <= 90; i++) {
+            arr1[i - 65] = (char) i;
+            arr2[i - 65] = (char) (i + 32);
+            arr[i - 65] = String.valueOf((char) i) + (char) (i + 32);
+        }
+        System.out.println(Arrays.toString(arr1));
+        System.out.println(Arrays.toString(arr2));
+        System.out.println(Arrays.toString(arr));
     }
+
     /**
      * 打印目录结构
      */
@@ -124,6 +143,31 @@ public class Example {
     }
 
     /**
+     * 杨辉三角
+     *
+     * @param n 打印函数
+     */
+    public static void printTriangle(int n) {
+        int[][] triangle = new int[n][n];
+        for (int i = 0; i < n; i++) {
+            // 每行的第一个和最后一个数字都是1
+            triangle[i][0] = 1;
+            triangle[i][i] = 1;
+            for (int j = 1; j < i; j++) {
+                // 其他数字是上一行的两个数字之和
+                triangle[i][j] = triangle[i - 1][j - 1] + triangle[i - 1][j];
+            }
+        }
+        // 打印杨辉三角
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j <= i; j++) {
+                System.out.print(triangle[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    /**
      * 求总数
      */
     public static void totalSum() {
@@ -167,7 +211,7 @@ public class Example {
     /**
      * 打印九九乘法表
      */
-    public void multiplicationTable(){
+    public void multiplicationTable() {
         for (int i = 1; i <= 9; i++) {
             for (int j = 1; j < i + 1; j++) {
                 System.out.print(j + "*" + i + "=" + (j * i) + "\t");

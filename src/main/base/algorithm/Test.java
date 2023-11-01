@@ -5,11 +5,10 @@ import java.util.Arrays;
 public class Test {
     // -----------------------------------
     public static void main(String[] args) {
-        int[] arr = {3,11,5,63,34,6,54,73};
+        int[] arr = {3, 11, 5, 63, 34, 6, 54, 73};
         insertionSort(arr);
         System.out.println(Arrays.toString(arr));
     }
-
     // -----------------------------------
 
     /**
@@ -46,7 +45,6 @@ public class Test {
                     break;
                 }
             }
-
         }
     }
 
