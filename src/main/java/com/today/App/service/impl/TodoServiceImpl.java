@@ -16,7 +16,6 @@ public class TodoServiceImpl implements TodoService {
 
     @Override
     public List<Todo> todoList() {
-        System.out.println("666-----todoList");
         return todoMapper.todoList();
     }
 

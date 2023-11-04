@@ -26,7 +26,7 @@ public class TodoController {
      *
      * @return List
      */
-    @GetMapping(value = "/todo/list")
+    @GetMapping(value = "/todo")
     public JSONResult todoList() {
         return JSONResult.ok(todoService.todoList());
     }
@@ -36,7 +36,7 @@ public class TodoController {
      *
      * @return boolean
      */
-    @PostMapping(value = "/todo/add")
+    @PostMapping(value = "/todo")
     private JSONResult addTodo(@RequestBody Map<String, String> params) {
         Todo todo = new Todo();
         todo.setTitle(params.get("title"));
@@ -53,7 +53,7 @@ public class TodoController {
      *
      * @return boolean
      */
-    @PostMapping(value = "/todo/update/{id}")
+    @PostMapping(value = "/todo/{id}")
     private JSONResult updateTodo(@PathVariable int id, @RequestBody Map<String, String> params) {
         Todo todo = new Todo();
         todo.setId(id);
@@ -71,7 +71,7 @@ public class TodoController {
      *
      * @return boolean
      */
-    @DeleteMapping(value = "/todo/delete/{id}")
+    @DeleteMapping(value = "/todo/{id}")
     private JSONResult deleteTodo(@PathVariable int id) {
         boolean deleteResult = todoService.deleteTodo(id);
         if (deleteResult) {

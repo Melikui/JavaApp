@@ -1,6 +1,5 @@
 package com.today.App.controller;
 
-
 import com.today.App.util.JSONResult;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
