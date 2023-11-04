@@ -10,6 +10,6 @@ public class Todo {
     private String title;
     private int selected;
     private String content;
-    private LocalDateTime create_time;
-    private LocalDateTime update_time;
+    private LocalDateTime createTime;
+    private LocalDateTime updateTime;
 }
