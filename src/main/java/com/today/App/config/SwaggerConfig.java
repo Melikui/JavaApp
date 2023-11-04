@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * url: http://127.0.0.1:8080/swagger-ui/index.html
+ * url: <a href="http://127.0.0.1:8080/swagger-ui/index.html">...</a>
  */
 @Configuration
 public class SwaggerConfig {
