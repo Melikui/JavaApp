@@ -17,14 +17,14 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(RuntimeException.class) // 捕获运行时异常
-    public String handleMyException(RuntimeException e) {
+    public JSONResult handleMyException(RuntimeException e) {
         log.error("运行时异常信息：{}", e.getMessage());
-        return e.getMessage();
+        return JSONResult.error(e.getMessage());
     }
 
     @ExceptionHandler(ArithmeticException.class) // 捕获算术异常
-    public String handleMyException(ArithmeticException e) {
+    public JSONResult handleMyException(ArithmeticException e) {
         log.error("算术异常信息：{}", e.getMessage());
-        return e.getMessage();
+        return JSONResult.error(e.getMessage());
     }
 }

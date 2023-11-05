@@ -23,7 +23,6 @@ class ApplicationTests {
     private RedisTemplate<String, Object> redisTemplate;
     @Autowired
     private StudentMapper studentMapper;
-
     @Autowired
     private JdbcTemplate jdbcTemplate;
 

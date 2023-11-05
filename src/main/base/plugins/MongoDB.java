@@ -25,9 +25,7 @@ public class MongoDB {
             // 连接到数据库
             MongoDatabase mongoDatabase = mongoClient.getDatabase("spider");
             System.out.println("Connect to database successfully");
-
             MongoCollection<Document> collection = mongoDatabase.getCollection("user");
-            System.out.println("集合 test 选择成功");
             /*
               检索所有文档
               1. 获取迭代器FindIterable<Document>
