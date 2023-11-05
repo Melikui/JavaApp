@@ -41,9 +41,9 @@ public class Sort {
      * @param arr: 列表
      */
     public static void bubbleSort(int[] arr) {
-        int n = arr.length;
-        for (int i = 0; i < n - 1; i++) {
-            for (int j = 0; j < n - i - 1; j++) {
+        int len = arr.length;
+        for (int i = 0; i < len - 1; i++) {
+            for (int j = 0; j < len - i - 1; j++) {
                 if (arr[j] > arr[j + 1]) {
                     // 交换相邻元素
                     int temp = arr[j];
@@ -60,10 +60,10 @@ public class Sort {
      * @param arr: 列表
      */
     public static void selectionSort(int[] arr) {
-        int n = arr.length;
-        for (int i = 0; i < n - 1; i++) {
+        int len = arr.length;
+        for (int i = 0; i < len - 1; i++) {
             int minIndex = i;
-            for (int j = i + 1; j < n; j++) {
+            for (int j = i + 1; j < len; j++) {
                 if (arr[j] < arr[minIndex]) {
                     minIndex = j;
                 }
@@ -80,8 +80,8 @@ public class Sort {
      * @param arr: 列表
      */
     public static void insertionSort(int[] arr) {
-        int n = arr.length;
-        for (int i = 1; i < n; i++) {
+        int len = arr.length;
+        for (int i = 1; i < len; i++) {
             int key = arr[i];
             int j = i - 1;
             // 将大于key的元素向后移动
@@ -197,11 +197,11 @@ public class Sort {
      * @param arr: 列表
      */
     public static void heapSort(int[] arr) {
-        int n = arr.length;
-        for (int i = n / 2 - 1; i >= 0; i--) {
-            heapify(arr, n, i);
+        int len = arr.length;
+        for (int i = len / 2 - 1; i >= 0; i--) {
+            heapify(arr, len, i);
         }
-        for (int i = n - 1; i > 0; i--) {
+        for (int i = len - 1; i > 0; i--) {
             int temp = arr[0];
             arr[0] = arr[i];
             arr[i] = temp;
@@ -233,10 +233,10 @@ public class Sort {
      * @param arr: 列表
      */
     public static void shellSort(int[] arr) {
-        int n = arr.length;
-        int gap = n / 2;
+        int len = arr.length;
+        int gap = len / 2;
         while (gap > 0) {
-            for (int i = gap; i < n; i++) {
+            for (int i = gap; i < len; i++) {
                 int temp = arr[i];
                 int j = i;
                 while (j >= gap && arr[j - gap] > temp) {

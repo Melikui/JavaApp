@@ -11,6 +11,26 @@ import java.util.Scanner;
 
 public class Example {
     /**
+     * 回文检测
+     */
+    public static void isPalindrome() {
+        System.out.print("请输入内容：");
+        Scanner scanner = new Scanner(System.in);
+        String str = scanner.next();
+        int len = str.length(), left = 0, right = len - 1;
+        boolean flag = true;
+        while (left < right) {
+            if (str.charAt(left) != str.charAt(right)) {
+                flag = false;
+                break;
+            }
+            left++;
+            right--;
+        }
+        System.out.println(flag);
+    }
+
+    /**
      * 打印水仙花数
      */
     public static void shuiXianHua() {
