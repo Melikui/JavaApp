@@ -3,7 +3,12 @@ package algorithm.tree;
 /**
  * 二分搜索树查找
  */
-public class Binary<Key extends Comparable<Key>, Value> {
+public class BinaryTree<Key extends Comparable<Key>, Value> {
+    // 根节点
+    private Node root;
+    // 树种的节点个数
+    private int count;
+
     // 树中的节点为私有的类, 外界不需要了解二分搜索树节点的具体实现
     private class Node {
         private final Key key;
@@ -17,13 +22,8 @@ public class Binary<Key extends Comparable<Key>, Value> {
         }
     }
 
-    // 根节点
-    private Node root;
-    // 树种的节点个数
-    private int count;
-
     // 构造函数, 默认构造一棵空二分搜索树
-    public Binary() {
+    public BinaryTree() {
         root = null;
         count = 0;
     }
@@ -61,46 +61,49 @@ public class Binary<Key extends Comparable<Key>, Value> {
     // 向以node为根的二分搜索树中, 插入节点(key, value), 使用递归算法
     // 返回插入新节点后的二分搜索树的根
     private Node insert(Node node, Key key, Value value) {
-
         if (node == null) {
             count++;
             return new Node(key, value);
         }
-
-        if (key.compareTo(node.key) == 0)
+        if (key.compareTo(node.key) == 0) {
             node.value = value;
-        else if (key.compareTo(node.key) < 0)
+        } else if (key.compareTo(node.key) < 0) {
             node.left = insert(node.left, key, value);
-        else  // key > node->key
+        } else {
+            // key > node->key
             node.right = insert(node.right, key, value);
-
+        }
         return node;
     }
 
     // 查看以node为根的二分搜索树中是否包含键值为key的节点, 使用递归算法
     private boolean contain(Node node, Key key) {
-
-        if (node == null)
+        if (node == null) {
             return false;
-
-        if (key.compareTo(node.key) == 0)
+        }
+        if (key.compareTo(node.key) == 0) {
             return true;
-        else if (key.compareTo(node.key) < 0)
+        } else if (key.compareTo(node.key) < 0) {
             return contain(node.left, key);
-        else // key > node->key
+        } else {
+            // key > node->key
             return contain(node.right, key);
+        }
     }
 
     // 在以node为根的二分搜索树中查找key所对应的value, 递归算法
     // 若value不存在, 则返回NULL
     private Value search(Node node, Key key) {
-        if (node == null)
+        if (node == null) {
             return null;
-        if (key.compareTo(node.key) == 0)
+        }
+        if (key.compareTo(node.key) == 0) {
             return node.value;
-        else if (key.compareTo(node.key) < 0)
+        } else if (key.compareTo(node.key) < 0) {
             return search(node.left, key);
-        else // key > node->key
+        } else {
+            // key > node->key
             return search(node.right, key);
+        }
     }
 }
