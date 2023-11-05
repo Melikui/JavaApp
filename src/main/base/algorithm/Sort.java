@@ -121,6 +121,25 @@ public class Sort {
         swap(arr, i + 1, high);
         return i + 1;
     }
+    public static void quickSort2(int[] arr, int left, int right) {
+        if (left >= right) {
+            return;
+        }
+        int base = arr[left], l = left, r = right;
+        while (l < r) {
+            while (l < r && arr[r] >= base) {
+                r--;
+            }
+            arr[l] = arr[r];
+            while (l < r && arr[l] <= base) {
+                l++;
+            }
+            arr[r] = arr[l];
+        }
+        arr[r] = base;
+        quickSort(arr, left, r - 1);
+        quickSort(arr, r + 1, right);
+    }
 
     /**
      * 5. 归并排序（Merge Sort）
