@@ -10,7 +10,17 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Example {
-
+    /**
+     * 打印水仙花数
+     */
+    public static void shuiXianHua() {
+        for (int i = 100; i < 1000; i++) {
+            int a = i / 10 / 10, b = i / 10 % 10, c = i % 10;
+            if (a * a * a + b * b * b + c * c * c == i) {
+                System.out.println("" + a + b + c);
+            }
+        }
+    }
 
     /**
      * 生成字母
