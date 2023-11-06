@@ -3,7 +3,7 @@ package algorithm.tree;
 /**
  * 二分搜索树查找
  */
-public class BST<Key extends Comparable<Key>, Value> {
+public class BinarySearchTree<Key extends Comparable<Key>, Value> {
     // 根节点
     private Node root;
     // 树种的节点个数
@@ -23,7 +23,7 @@ public class BST<Key extends Comparable<Key>, Value> {
     }
 
     // 构造函数, 默认构造一棵空二分搜索树
-    public BST() {
+    public BinarySearchTree() {
         root = null;
         count = 0;
     }
