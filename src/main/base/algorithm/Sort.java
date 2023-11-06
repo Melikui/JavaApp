@@ -121,6 +121,7 @@ public class Sort {
         swap(arr, i + 1, high);
         return i + 1;
     }
+
     public static void quickSort2(int[] arr, int left, int right) {
         if (left >= right) {
             return;

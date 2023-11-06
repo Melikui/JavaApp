@@ -80,7 +80,15 @@ class BinaryTree<T> {
     }
 
     // 求当前二叉树的高度
+    // 使用后序遍历法计算二叉树的高度
+    // 当parent为root时，即可计算当前二叉树的高度
     public int getHeight(Node<T> parent) {
-        return 0;
+        int lh, rh, max;
+        if (parent != null) {
+            lh = getHeight(parent.left);  //求左子树的高度
+            rh = getHeight(parent.right);  //求右子树的高度
+            max = Math.max(lh, rh);
+            return max + 1;
+        } else return 0;
     }
 }
