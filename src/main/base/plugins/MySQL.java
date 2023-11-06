@@ -8,11 +8,11 @@ import java.sql.Statement;
 
 public class MySQL {
     static String driver = "com.mysql.cj.jdbc.Driver"; // MySQL 驱动
-    String url = "jdbc:mysql://localhost:3306/likui"; // 数据库链接地址
-    String username = "root"; // 用户名
-    String password = "melikui"; // 用户密码
-    Connection connection; // 连接对象
-    Statement statement; // 执行语句
+    private String url = "jdbc:mysql://localhost:3306/likui"; // 数据库链接地址
+    private String username = "root"; // 用户名
+    private String password = "melikui"; // 用户密码
+    private Connection connection; // 连接对象
+    private Statement statement; // 执行语句
 
     public MySQL() {
     }

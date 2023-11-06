@@ -2,7 +2,6 @@ package plugins;
 
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
-import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
@@ -11,34 +10,62 @@ import org.bson.Document;
 
 
 public class MongoDB {
-    public static void main(String[] args) {
-        /*
-         * https://zhuanlan.zhihu.com/p/622185505
-         */
+    private String url = "mongodb://127.0.0.1:27017";
+    private String database = "spider";
+    private String collectionName = "user";
+    private MongoClient mongoClient;
+
+    public MongoDB() {
+    }
+
+    public MongoDB(String database, String collection) {
+        this.database = database;
+        this.collectionName = collection;
+    }
+
+    public MongoDB(String url, String database, String collection) {
+        this.url = url;
+        this.database = database;
+        this.collectionName = collection;
+    }
+
+    /**
+     * 连接到 mongodb 服务
+     * <a href="https://zhuanlan.zhihu.com/p/622185505"></a>
+     */
+    public void connection() {
         try {
-            // 连接到 mongodb 服务
-            String url = "mongodb://127.0.0.1:27017";
             MongoClientSettings mongoClientSettings = MongoClientSettings.builder()
-                    .applyConnectionString(new ConnectionString(url))
+                    .applyConnectionString(new ConnectionString(this.url))
                     .build();
-            MongoClient mongoClient = MongoClients.create(mongoClientSettings);
-            // 连接到数据库
-            MongoDatabase mongoDatabase = mongoClient.getDatabase("spider");
-            System.out.println("Connect to database successfully");
-            MongoCollection<Document> collection = mongoDatabase.getCollection("user");
-            /*
-              检索所有文档
-              1. 获取迭代器FindIterable<Document>
-              2. 获取游标MongoCursor<Document>
-              3. 通过游标遍历检索出的文档集合
-             */
-            FindIterable<Document> findIterable = collection.find();
-            for (Document document : findIterable) {
-                System.out.println(document);
-            }
-            mongoClient.close();
+            this.mongoClient = MongoClients.create(mongoClientSettings);
         } catch (Exception e) {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
         }
+    }
+
+    /**
+     * 查询
+     */
+    public void query() {
+        this.connection();
+        MongoDatabase mongoDatabase = this.mongoClient.getDatabase(this.database);
+        MongoCollection<Document> collection = mongoDatabase.getCollection(this.collectionName);
+        for (Document document : collection.find()) {
+            System.out.println(document);
+        }
+        this.close();
+    }
+
+    /**
+     * 关闭数据库
+     */
+    public void close() {
+        this.mongoClient.close();
+    }
+
+    public static void main(String[] args) {
+        MongoDB mongodb = new MongoDB();
+        mongodb.query();
     }
 }
