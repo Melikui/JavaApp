@@ -57,8 +57,7 @@ public class Search {
      * @return boolean
      */
     public static int binarySearch(int[] arr, int target) {
-        // 先对列表进行排序
-        // Arrays.sort(arr);
+        // 先对列表进行排序 Arrays.sort(arr);
         // 1.定义两个变量记录要查找的范围
         int left = 0;
         int right = arr.length - 1;

@@ -37,7 +37,9 @@ public class JavaTest {
      */
     @Test
     public void findUser() {
-        List<Github> userList = mongoTemplate.findAll(Github.class);
-        log.info(userList.toString());
+        List<Github> users = mongoTemplate.findAll(Github.class);
+        for (Github user : users) {
+            System.out.println(user);
+        }
     }
 }
