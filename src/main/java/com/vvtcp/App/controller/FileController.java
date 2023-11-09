@@ -24,20 +24,19 @@ public class FileController {
     ) throws IOException {
         if (!file.isEmpty()) {
             String fileName = file.getOriginalFilename();
-            file.transferTo(new File("file/" + fileName));
+            file.transferTo(new File("/Users/likui/Desktop/Java/file/" + fileName));
         }
         if (!image.isEmpty()) {
             String imgName = image.getOriginalFilename();
-            image.transferTo(new File("file/image/" + imgName));
+            image.transferTo(new File("/Users/likui/Desktop/Java/file/image/" + imgName));
         }
         for (MultipartFile photo : photos) {
             if (!photo.isEmpty()) {
                 String imgName = photo.getOriginalFilename();
-                photo.transferTo(new File("file/image/" + imgName));
+                photo.transferTo(new File("/Users/likui/Desktop/Java/file/image/" + imgName));
             }
         }
     }
-
     @PostMapping("/download")
     public void download() {
         System.out.println("文件下载");
