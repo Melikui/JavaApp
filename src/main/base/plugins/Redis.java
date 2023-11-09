@@ -7,7 +7,7 @@ public class Redis {
     private static final Integer port = 6379;
 
     // 获取连接
-    public Jedis connection() throws Exception {
+    public Jedis connection() {
         return new Jedis(ip, port);
     }
 

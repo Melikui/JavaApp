@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Jwt {
-    private final String SECRET = "token-mytoday";
+    private final String SECRET = "token-vvtcp";
 
     /**
      * 生成token

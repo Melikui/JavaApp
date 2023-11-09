@@ -1,29 +1,19 @@
-import plugins.MongoDB;
-
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class Main {
-    // -----------------------------------------------
     public static void main(String[] args) {
-        MongoDB mongodb = new MongoDB();
-        mongodb.query();
-    }
-    // -----------------------------------------------
-
-    public static void isPalindrome() {
-        System.out.print("请输入内容：");
-        Scanner scanner = new Scanner(System.in);
-        String str = scanner.next();
-        int len = str.length(), left = 0, right = len - 1;
-        boolean flag = true;
-        while (left < right) {
-            if (str.charAt(left) != str.charAt(right)) {
-                flag = false;
-                break;
-            }
-            left++;
-            right--;
-        }
-        System.out.println(flag);
+        ArrayList<String> list = new ArrayList<>();
+        list.add("C/C++");
+        list.add("Java");
+        list.add("Python");
+        list.add("Node");
+        list.add("HTML/CSS");
+        Collections.reverse(list);
+        Collections.shuffle(list);
+        Collections.sort(list);
+        Collections.swap(list, 2, 4);
+        System.out.println(list);
     }
 }
+
