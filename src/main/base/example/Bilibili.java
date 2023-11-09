@@ -12,7 +12,7 @@ import static util.FileUtil.fileWrite;
 
 public class Bilibili {
     public static void getDirectory() throws IOException {
-        String html = fileRead("/Users/likui/Desktop/Java/file/html/bilibili.html");
+        String html = fileRead("file/html/bilibili.html");
         // 创建 Document 对象
         Document document = Jsoup.parse(html);
         // 获取列表
@@ -26,6 +26,6 @@ public class Bilibili {
             System.out.println(itemValue);
             content.append(itemValue);
         }
-        fileWrite("/Users/likui/Desktop/Java/file/text/bilibili.txt", content.toString(),false);
+        fileWrite("file/text/bilibili.txt", content.toString(),false);
     }
 }

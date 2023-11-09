@@ -51,7 +51,7 @@ public class Bootcdn {
                 System.out.println(itemValue);
                 content.append(itemValue);
             }
-            fileWrite("/Users/likui/Desktop/Java/file/text/bootcdn.txt", content.toString(),true);
+            fileWrite("file/text/bootcdn.txt", content.toString(),true);
         }
         httpClient.close();
         response.close();
