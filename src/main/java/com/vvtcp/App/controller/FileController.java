@@ -12,29 +12,34 @@ import java.io.IOException;
 
 @RestController
 @RequestMapping("/api")
-public class UploadController {
+public class FileController {
     /**
      * 文件上传
      */
     @PostMapping("/upload")
     public void upload(
-            @RequestPart("astudy/file") MultipartFile file,
+            @RequestPart("file") MultipartFile file,
             @RequestPart("image") MultipartFile image,
             @RequestPart("photos") MultipartFile[] photos
     ) throws IOException {
         if (!file.isEmpty()) {
             String fileName = file.getOriginalFilename();
-            file.transferTo(new File("/Users/likui/Desktop/Java/file/" + fileName));
+            file.transferTo(new File("file/" + fileName));
         }
         if (!image.isEmpty()) {
             String imgName = image.getOriginalFilename();
-            image.transferTo(new File("/Users/likui/Desktop/Java/file/image/" + imgName));
+            image.transferTo(new File("file/image/" + imgName));
         }
         for (MultipartFile photo : photos) {
             if (!photo.isEmpty()) {
                 String imgName = photo.getOriginalFilename();
-                photo.transferTo(new File("/Users/likui/Desktop/Java/file/image/" + imgName));
+                photo.transferTo(new File("file/image/" + imgName));
             }
         }
+    }
+
+    @PostMapping("/download")
+    public void download() {
+        System.out.println("文件下载");
     }
 }
